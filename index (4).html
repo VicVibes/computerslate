@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ComputerSlate | One Platform. Every Operation.</title>
+<meta name="description" content="Manage your School, Business, Office, or Training Centre from a single intelligent platform. Built specifically for Nigeria and Africa.">
+<meta name="keywords" content="school management software Nigeria, business inventory POS, office management, HR software, Gridzo AI, African SaaS">
+<meta name="author" content="Victor Adewumi">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical & Alternate -->
+<link rel="canonical" href="https://computerslate.com.ng">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/logo.png">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://computerslate.com.ng">
+<meta property="og:title" content="ComputerSlate | One Platform. Every Operation.">
+<meta property="og:description" content="Manage your School, Business, Office, or Training Centre from a single intelligent platform.">
+<meta property="og:image" content="https://computerslate.com.ng/images/og-cover.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://computerslate.com.ng">
+<meta property="twitter:title" content="ComputerSlate | One Platform. Every Operation.">
+<meta property="twitter:description" content="Manage your School, Business, Office, or Training Centre from a single intelligent platform.">
+<meta property="twitter:image" content="https://computerslate.com.ng/images/og-cover.jpg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ComputerSlate",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "NGN"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "50"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Victor Adewumi",
+    "url": "https://victoradewumi.com"
+  }
+}
+</script>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Force HTTPS -->
+<script>
+  if (window.location.hostname === "computerslate.com.ng" && window.location.protocol !== "https:") {
+    window.location.href = window.location.href.replace("http:", "https:");
+  }
+</script>
+
+<style>
+/* ── DESIGN SYSTEM & ARCHITECTURE ────────────────── */
+:root {
+  --space-1: 8px;   --space-2: 16px;  --space-3: 24px;
+  --space-4: 32px;  --space-5: 40px;  --space-6: 48px;
+  --space-8: 64px;  --space-10: 80px; --space-12: 96px;
+  --font-head: 'Clash Display', sans-serif;
+  --font-body: 'Bricolage Grotesque', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 32px;
+  --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --nav-h: 72px;
+}
+
+:root, [data-theme="light"] {
+  --rgb-bg: 244, 247, 255;
+  --rgb-surface: 255, 255, 255;
+  --rgb-text: 10, 15, 44;
+  --rgb-muted: 90, 106, 136;
+  --rgb-border: 0, 0, 0;
+  --c-gold: #E69500;
+  --c-gold-glow: rgba(230, 149, 0, 0.2);
+  --c-blue: #2563EB;
+  --c-ok: #16A34A;
+  --c-bad: #DC2626;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 24px 48px rgba(0,0,0,0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --rgb-bg: 6, 10, 22;
+    --rgb-surface: 13, 20, 38;
+    --rgb-text: 232, 240, 255;
+    --rgb-muted: 138, 155, 191;
+    --rgb-border: 255, 255, 255;
+    --c-gold: #F5B800;
+    --c-gold-glow: rgba(245, 184, 0, 0.4);
+  }
+}
+[data-theme="dark"] {
+  --rgb-bg: 6, 10, 22;
+  --rgb-surface: 13, 20, 38;
+  --rgb-text: 232, 240, 255;
+  --rgb-muted: 138, 155, 191;
+  --rgb-border: 255, 255, 255;
+  --c-gold: #F5B800;
+  --c-gold-glow: rgba(245, 184, 0, 0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { 
+  font-family: var(--font-body); 
+  background-color: rgb(var(--rgb-bg)); 
+  color: rgb(var(--rgb-text)); 
+  font-size: 15px; line-height: 1.6; 
+  overflow-x: hidden; 
+  transition: background-color var(--transition), color var(--transition); 
+}
+::selection { background: var(--c-gold); color: #000; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+ul { list-style: none; }
+button { font-family: var(--font-body); border: none; cursor: pointer; background: none; }
+
+.text-muted { color: rgb(var(--rgb-muted)); }
+.text-gold { color: var(--c-gold); }
+.gradient-text { background: linear-gradient(135deg, var(--c-gold), #FF9500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.glass {
+  background: rgba(var(--rgb-surface), 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(var(--rgb-border), 0.1);
+}
+.glass-solid { background: rgb(var(--rgb-surface)); border: 1px solid rgba(var(--rgb-border), 0.1); }
+.elevation-1 { box-shadow: var(--shadow-sm); }
+.elevation-2 { box-shadow: var(--shadow-md); }
+.elevation-3 { box-shadow: var(--shadow-lg); }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); }
+.section-pad { padding: var(--space-10) 0; }
+.flex { display: flex; } .grid { display: grid; }
+.items-center { align-items: center; } .justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); } .gap-3 { gap: var(--space-3); } .gap-4 { gap: var(--space-4); }
+.text-center { text-align: center; }
+
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; background: rgba(var(--rgb-border), 0.05); border: 1px solid rgba(var(--rgb-border), 0.1); color: rgb(var(--rgb-text)); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--space-3); }
+.badge.gold { color: var(--c-gold); background: rgba(230, 149, 0, 0.1); border-color: rgba(230, 149, 0, 0.2); }
+.title-xl { font-family: var(--font-head); font-size: clamp(32px, 5vw, 64px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; margin-bottom: var(--space-3); }
+.title-lg { font-family: var(--font-head); font-size: clamp(26px, 4vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: var(--space-3); }
+.title-md { font-family: var(--font-head); font-size: 20px; font-weight: 600; margin-bottom: var(--space-1); }
+.subtitle { font-size: clamp(15px, 2vw, 18px); color: rgb(var(--rgb-muted)); max-width: 600px; line-height: 1.6; margin-bottom: var(--space-4); margin-left: auto; margin-right: auto; }
+.text-left .subtitle { margin-left: 0; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: var(--radius-sm); font-weight: 600; font-size: 14px; transition: var(--transition); min-height: 48px; }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--c-gold); color: #000; box-shadow: 0 4px 12px var(--c-gold-glow); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--c-gold-glow); }
+.btn-outline { background: transparent; border: 1px solid rgba(var(--rgb-border), 0.2); color: rgb(var(--rgb-text)); }
+.btn-outline:hover { border-color: var(--c-gold); color: var(--c-gold); background: rgba(var(--rgb-surface), 0.5); }
+.btn-full { width: 100%; }
+
+.bg-mesh { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: radial-gradient(circle at top right, rgba(var(--rgb-surface), 0.3) 0%, transparent 60%); }
+.bg-orb { position: absolute; border-radius: 50%; filter: blur(100px); animation: float 20s ease-in-out infinite alternate; opacity: 0.5; }
+@keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, 80px) scale(1.1); } }
+
+/* ── NAVIGATION ──────────────────────────────────── */
+nav { position: fixed; top: 0; width: 100%; height: var(--nav-h); z-index: 100; border-bottom: 1px solid rgba(var(--rgb-border), 0.1); padding: 0 var(--space-4); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.nav-brand { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--c-gold); display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.nav-brand span { color: rgb(var(--rgb-text)); }
+
+.nav-domains { position: relative; display: flex; gap: var(--space-1); overflow-x: auto; scrollbar-width: none; padding: var(--space-1); flex-grow: 1; margin: 0 var(--space-3); mask-image: linear-gradient(90deg, #000 90%, transparent); min-width: 0; }
+.nav-domains::-webkit-scrollbar { display: none; }
+.nav-btn { position: relative; z-index: 1; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 14px; color: rgb(var(--rgb-muted)); white-space: nowrap; transition: color var(--transition); }
+.nav-btn:hover { color: rgb(var(--rgb-text)); }
+.nav-btn.active { color: var(--c-gold); }
+.nav-indicator { position: absolute; top: var(--space-1); bottom: var(--space-1); left: 0; background: rgba(230, 149, 0, 0.1); border: 1px solid rgba(230, 149, 0, 0.2); border-radius: 20px; z-index: 0; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; }
+
+.cmd-trigger { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(var(--rgb-border), 0.05); border: 1px solid rgba(var(--rgb-border), 0.1); border-radius: var(--radius-sm); color: rgb(var(--rgb-muted)); font-size: 13px; transition: var(--transition); flex-shrink: 0; }
+.cmd-trigger:hover { border-color: rgba(var(--rgb-border), 0.3); color: rgb(var(--rgb-text)); }
+.cmd-key { font-family: var(--font-mono); font-size: 11px; padding: 2px 6px; background: rgba(var(--rgb-surface), 0.8); border-radius: 4px; border: 1px solid rgba(var(--rgb-border), 0.1); }
+
+/* ── HERO SECTION ────────────────────────────────── */
+.hero-split { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--space-6); align-items: center; min-height: calc(100vh - var(--nav-h) - 80px); padding-top: var(--space-6); text-align: left; }
+.hero-split .subtitle { margin-left: 0; max-width: 520px; }
+.hero-ctas { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4); }
+.hero-trust { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; font-size: 13px; color: rgb(var(--rgb-muted)); margin-top: var(--space-4); }
+.hero-trust i { color: var(--c-gold); }
+.hero-visual { position: relative; }
+.hero-visual img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid rgba(var(--rgb-border), 0.1); }
+.hero-badge-float { position: absolute; padding: 10px 16px; border-radius: var(--radius-md); background: rgb(var(--rgb-surface)); border: 1px solid rgba(var(--rgb-border), 0.1); box-shadow: var(--shadow-md); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; animation: floatBadge 6s ease-in-out infinite; }
+.hero-badge-float i { color: var(--c-ok); }
+.hero-badge-float:nth-child(2) { top: 20px; left: -20px; animation-delay: -2s; }
+.hero-badge-float:nth-child(3) { bottom: 30px; right: -10px; animation-delay: -4s; }
+@keyframes floatBadge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+/* ── TRUST BAR ───────────────────────────────────── */
+.trust-bar { display: flex; justify-content: center; gap: var(--space-5); flex-wrap: wrap; padding: var(--space-4) 0; border-top: 1px solid rgba(var(--rgb-border), 0.08); border-bottom: 1px solid rgba(var(--rgb-border), 0.08); margin-bottom: var(--space-8); }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgb(var(--rgb-muted)); }
+.trust-item i { color: var(--c-gold); font-size: 16px; }
+
+/* ── VIDEO SECTION ───────────────────────────────── */
+.video-section { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: rgb(var(--rgb-surface)); border: 1px solid rgba(var(--rgb-border), 0.1); box-shadow: var(--shadow-lg); }
+.video-placeholder { aspect-ratio: 16/9; display: grid; place-items: center; position: relative; cursor: pointer; }
+.video-placeholder img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+.video-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); transition: var(--transition); }
+.video-section:hover .video-overlay { background: rgba(0,0,0,0.45); }
+.play-btn { width: 80px; height: 80px; border-radius: 50%; background: var(--c-gold); color: #000; display: grid; place-items: center; font-size: 24px; box-shadow: 0 0 0 12px rgba(230,149,0,0.2); transition: var(--transition); }
+.video-section:hover .play-btn { transform: scale(1.1); box-shadow: 0 0 0 20px rgba(230,149,0,0.15); }
+
+/* ── WHY CHOOSE / INTEGRATIONS ───────────────────── */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+.why-card { padding: var(--space-4); border-radius: var(--radius-md); transition: var(--transition); }
+.why-card:hover { transform: translateY(-4px); border-color: var(--c-gold); }
+.why-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(230,149,0,0.1); color: var(--c-gold); display: grid; place-items: center; font-size: 20px; margin-bottom: var(--space-2); }
+
+.integrations-row { display: flex; justify-content: center; align-items: center; gap: var(--space-5); flex-wrap: wrap; opacity: 0.7; }
+.integrations-row img { height: 32px; filter: grayscale(100%); opacity: 0.6; transition: var(--transition); }
+.integrations-row img:hover { filter: grayscale(0%); opacity: 1; }
+.int-placeholder { padding: 8px 16px; border-radius: 8px; background: rgba(var(--rgb-border),0.05); border: 1px solid rgba(var(--rgb-border),0.1); font-weight: 600; font-size: 14px; color: rgb(var(--rgb-muted)); display: flex; align-items: center; gap: 8px; }
+
+/* ── SECURITY SECTION ────────────────────────────── */
+.security-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-3); }
+.security-card { text-align: center; padding: var(--space-4); }
+.security-card i { font-size: 32px; color: var(--c-gold); margin-bottom: var(--space-2); }
+
+/* ── CARDS & SCROLLERS ───────────────────────────── */
+.h-scroller { display: flex; gap: var(--space-3); overflow-x: auto; scroll-snap-type: x mandatory; padding: var(--space-2) 0 var(--space-6); scrollbar-width: none; }
+.h-scroller::-webkit-scrollbar { display: none; }
+.card-domain { flex: 0 0 clamp(280px, 80vw, 360px); scroll-snap-align: center; padding: var(--space-4); border-radius: var(--radius-lg); position: relative; overflow: hidden; transition: var(--transition); cursor: pointer; text-align: left; }
+.card-domain:hover { transform: translateY(-8px); border-color: rgba(230, 149, 0, 0.4); box-shadow: var(--shadow-lg); }
+.card-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(230, 149, 0, 0.1); color: var(--c-gold); display: grid; place-items: center; font-size: 24px; margin-bottom: var(--space-3); transition: var(--transition); }
+.card-domain:hover .card-icon { background: var(--c-gold); color: #000; transform: rotate(-5deg) scale(1.1); }
+.feat-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-4); font-size: 14px; font-weight: 500; }
+.feat-list i { color: var(--c-ok); }
+
+.grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
+.card-feat { padding: var(--space-4); border-radius: var(--radius-md); transition: var(--transition); cursor: pointer; }
+.card-feat:hover { transform: translateY(-4px); border-color: var(--c-gold); }
+.tag-line { display: inline-block; padding: 4px 10px; border-radius: 6px; background: rgba(var(--rgb-border), 0.05); font-size: 11px; color: rgb(var(--rgb-muted)); font-family: var(--font-mono); border: 1px solid rgba(var(--rgb-border), 0.1); }
+
+.highlight-box { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: center; background: rgb(var(--rgb-surface)); border: 1px solid rgba(var(--rgb-border), 0.1); border-radius: var(--radius-lg); padding: var(--space-5); margin: var(--space-6) 0; }
+
+.card-price { padding: var(--space-5); border-radius: var(--radius-lg); position: relative; transition: var(--transition); }
+.card-price:hover { transform: translateY(-4px); border-color: rgba(230,149,0,0.3); }
+.card-price.featured { border: 2px solid var(--c-gold); transform: scale(1.02); }
+.card-price.featured:hover { transform: scale(1.02) translateY(-4px); }
+.price-tag { font-family: var(--font-head); font-size: 48px; font-weight: 700; line-height: 1; margin: var(--space-1) 0 var(--space-3); }
+.price-tag span { font-size: 20px; color: var(--c-gold); vertical-align: super; }
+
+.accordion { border-bottom: 1px solid rgba(var(--rgb-border), 0.1); }
+.acc-header { width: 100%; text-align: left; padding: var(--space-3) 0; font-weight: 600; font-size: 16px; display: flex; justify-content: space-between; align-items: center; color: rgb(var(--rgb-text)); gap: var(--space-2); min-height: 48px; }
+.acc-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: rgb(var(--rgb-muted)); font-size: 14px; }
+.acc-content p { padding-bottom: var(--space-3); }
+.accordion.active .acc-content { max-height: 300px; }
+.accordion.active .acc-header i { transform: rotate(180deg); color: var(--c-gold); }
+
+.stat-box { padding: var(--space-4); text-align: center; border-radius: var(--radius-md); }
+.stat-num { font-family: var(--font-head); font-size: 40px; font-weight: 700; color: var(--c-gold); }
+
+.carousel { display: flex; gap: var(--space-3); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--space-2); scrollbar-width: none; }
+.carousel::-webkit-scrollbar { display: none; }
+.review-card { flex: 0 0 clamp(300px, 80vw, 400px); scroll-snap-align: center; padding: var(--space-4); border-radius: var(--radius-md); }
+.stars { color: var(--c-gold); margin-bottom: var(--space-2); font-size: 14px; letter-spacing: 2px; }
+
+.steps-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; position: relative; text-align: center; }
+.steps-wrapper::before { content: ''; position: absolute; top: 30px; left: 16%; right: 16%; height: 2px; background: linear-gradient(90deg, transparent, var(--c-gold), transparent); z-index: 0; }
+.step-box { position: relative; z-index: 1; }
+.step-num { width: 60px; height: 60px; border-radius: 50%; background: rgb(var(--rgb-bg)); border: 2px solid var(--c-gold); color: var(--c-gold); font-family: var(--font-head); font-size: 24px; font-weight: 700; display: grid; place-items: center; margin: 0 auto 20px; box-shadow: 0 0 0 6px rgb(var(--rgb-bg)); }
+
+/* ── FINAL CTA ───────────────────────────────────── */
+.final-cta { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: var(--space-10) var(--space-4); text-align: center; background: linear-gradient(135deg, rgba(230,149,0,0.1), rgba(37,99,235,0.05)); border: 1px solid rgba(var(--rgb-border), 0.1); }
+.final-cta h2 { margin-bottom: var(--space-3); }
+.final-cta p { margin-bottom: var(--space-4); max-width: 500px; margin-left: auto; margin-right: auto; }
+
+/* ── MODALS, TOASTS & OVERLAYS ───────────────────── */
+#toast-container { position: fixed; bottom: var(--space-4); right: var(--space-4); left: var(--space-4); z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-1); pointer-events: none; }
+.toast { padding: 12px 20px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 10px; animation: slideInUp 0.3s forwards; background: rgb(var(--rgb-surface)); border: 1px solid rgba(var(--rgb-border), 0.1); box-shadow: var(--shadow-lg); max-width: 100%; pointer-events: auto; }
+.toast.success i { color: var(--c-ok); }
+.toast.error i { color: var(--c-bad); }
+
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; padding: var(--space-2); }
+.modal-backdrop.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: rgb(var(--rgb-bg)); border: 1px solid rgba(var(--rgb-border), 0.1); border-radius: var(--radius-lg); width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; padding: var(--space-4); transform: translateY(20px); transition: transform 0.3s; box-shadow: var(--shadow-lg); position: relative; }
+.modal-backdrop.active .modal-content { transform: translateY(0); }
+.modal-close { position: absolute; top: var(--space-3); right: var(--space-3); background: rgba(var(--rgb-border),0.05); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: rgb(var(--rgb-muted)); transition: var(--transition); }
+.modal-close:hover { background: rgba(var(--rgb-border),0.1); color: rgb(var(--rgb-text)); }
+
+.cmd-input { width: 100%; background: transparent; border: none; font-size: 18px; color: rgb(var(--rgb-text)); padding: var(--space-2) 0; outline: none; border-bottom: 1px solid rgba(var(--rgb-border), 0.1); margin-bottom: var(--space-2); font-family: var(--font-body); }
+.cmd-list { max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; }
+.cmd-item { padding: 12px 16px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 12px; cursor: pointer; transition: var(--transition); color: rgb(var(--rgb-muted)); font-weight: 500; min-height: 44px; }
+.cmd-item:hover, .cmd-item.selected { background: rgba(var(--rgb-border), 0.05); color: rgb(var(--rgb-text)); }
+.cmd-item i { width: 20px; text-align: center; color: var(--c-gold); }
+
+.form-group { margin-bottom: var(--space-3); text-align: left; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: rgb(var(--rgb-muted)); }
+.form-input { width: 100%; padding: 14px 16px; border-radius: var(--radius-sm); background: rgba(var(--rgb-surface), 0.5); border: 1px solid rgba(var(--rgb-border), 0.1); color: rgb(var(--rgb-text)); font-family: var(--font-body); font-size: 16px; transition: var(--transition); outline: none; }
+.form-input:focus { border-color: var(--c-gold); background: rgb(var(--rgb-bg)); box-shadow: 0 0 0 3px rgba(230,149,0,0.1); }
+
+.view { display: none; opacity: 0; padding-top: var(--nav-h); animation: fadePage 0.4s forwards; }
+.view.active { display: block; }
+@keyframes fadePage { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.skeleton { position: fixed; inset: 0; z-index: 90; background: rgb(var(--rgb-bg)); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.skeleton.show { opacity: 1; pointer-events: auto; }
+.loader { width: 40px; height: 40px; border: 3px solid rgba(var(--rgb-border),0.1); border-top-color: var(--c-gold); border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#backToTop { position: fixed; bottom: var(--space-4); left: var(--space-4); width: 44px; height: 44px; border-radius: 50%; background: var(--c-gold); color: #000; z-index: 99; display: grid; place-items: center; opacity: 0; pointer-events: none; transition: var(--transition); box-shadow: var(--shadow-md); }
+#backToTop.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#backToTop:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--space-8) 0 var(--space-4); text-align: center; }
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .container { padding: 0 var(--space-3); }
+  .highlight-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --nav-h: 64px; --space-10: 56px; --space-8: 40px; --space-6: 32px; }
+  body { font-size: 14px; }
+  .container { padding: 0 var(--space-2); }
+  .section-pad { padding: var(--space-6) 0; }
+
+  nav { padding: 0 var(--space-2); }
+  .nav-brand { font-size: 17px; }
+  .nav-domains { margin: 0 var(--space-1); }
+  .nav-btn { padding: 8px 12px; font-size: 13px; }
+  .cmd-trigger span { display: none; }
+  .cmd-trigger .cmd-key { display: none; }
+  .cmd-trigger { padding: 8px 10px; }
+  .nav-brand span { display: none; }
+
+  .hero-split { grid-template-columns: 1fr; text-align: center; min-height: auto; padding-top: var(--space-3); gap: var(--space-4); }
+  .hero-split .subtitle { margin-left: auto; margin-right: auto; }
+  .hero-visual { order: -1; max-width: 420px; margin: 0 auto; }
+  .hero-badge-float { display: none; }
+  .hero-ctas { justify-content: center; }
+  .hero-ctas .btn { flex: 1 1 auto; }
+  .hero-trust { justify-content: center; gap: var(--space-2) var(--space-3); }
+
+  .trust-bar { gap: var(--space-2) var(--space-3); margin-bottom: var(--space-6); }
+  .trust-item { font-size: 12px; }
+
+  .grid-cards { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .highlight-box { grid-template-columns: 1fr !important; text-align: center; padding: var(--space-4); gap: var(--space-4); }
+  .highlight-box .text-muted { margin-left: auto; margin-right: auto; }
+  .highlight-box > div:first-child .card-icon,
+  .highlight-box .card-icon { margin-left: auto; margin-right: auto; }
+
+  .steps-wrapper { grid-template-columns: 1fr; gap: 32px; }
+  .steps-wrapper::before { display: none; }
+
+  .card-price.featured { transform: none; }
+  .card-price.featured:hover { transform: translateY(-4px); }
+  .price-tag { font-size: 40px; }
+
+  .carousel, .h-scroller { padding-left: 2px; padding-right: 2px; }
+  .card-domain { flex-basis: 82vw; }
+  .review-card { flex-basis: 85vw; }
+
+  .modal-content { padding: var(--space-3); }
+
+  #backToTop { width: 40px; height: 40px; bottom: var(--space-2); left: var(--space-2); }
+  #toast-container { bottom: var(--space-2); right: var(--space-2); left: var(--space-2); align-items: stretch; }
+  .toast { width: 100%; }
+
+  .integrations-row { gap: var(--space-2); }
+  .int-placeholder { font-size: 12px; padding: 6px 12px; }
+}
+
+@media (max-width: 480px) {
+  .security-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; }
+  .btn { font-size: 13px; padding: 13px 18px; }
+  .final-cta { padding: var(--space-6) var(--space-2); }
+  .final-cta .flex.justify-center { flex-direction: column; align-items: stretch; }
+  .newsletter-form-group, form.flex { flex-direction: column; }
+  .card-domain { flex-basis: 88vw; }
+  .review-card { flex-basis: 88vw; }
+  .price-tag { font-size: 36px; }
+  .stat-num { font-size: 32px; }
+}
+
+@media (hover: none) {
+  .why-card:hover, .card-feat:hover, .card-price:hover, .card-domain:hover, .btn-primary:hover, .btn-outline:hover {
+    transform: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Dynamic Background -->
+<div class="bg-mesh">
+  <div class="bg-orb" style="width:500px; height:500px; background:rgba(37,99,235,0.1); top:-100px; left:-100px;"></div>
+  <div class="bg-orb" style="width:400px; height:400px; background:rgba(230,149,0,0.1); bottom:-100px; right:-100px; animation-delay:-5s;"></div>
+</div>
+
+<!-- Global Overlays -->
+<div id="toast-container"></div>
+<div id="page-loader" class="skeleton"><div class="loader"></div></div>
+<button id="backToTop" onclick="window.scrollTo(0,0)"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Navigation -->
+<nav class="glass">
+  <a href="#home" onclick="App.Router.navigate('home')" class="nav-brand">
+    <img src="images/logo.png" alt="ComputerSlate" width="32" height="32" onerror="this.style.display='none'">
+    Computer<span>Slate</span>
+  </a>
+  
+  <div class="nav-domains" id="navScroller">
+    <div class="nav-indicator" id="navIndicator"></div>
+    <button class="nav-btn active" data-target="home" onclick="App.Router.navigate('home')">Home</button>
+    <button class="nav-btn" data-target="school" onclick="App.Router.navigate('school')">Schools</button>
+    <button class="nav-btn" data-target="business" onclick="App.Router.navigate('business')">Businesses</button>
+    <button class="nav-btn" data-target="office" onclick="App.Router.navigate('office')">Offices</button>
+    <button class="nav-btn" data-target="training" onclick="App.Router.navigate('training')">Training</button>
+  </div>
+
+  <div class="flex items-center gap-2">
+    <button class="cmd-trigger glass-solid" onclick="App.UI.Modals.open('cmdPalette')" title="Search">
+      <i class="fas fa-search"></i> <span>Search</span> <kbd class="cmd-key">Ctrl K</kbd>
+    </button>
+    <button class="cmd-trigger glass-solid" onclick="App.Theme.toggle()" title="Toggle Theme" style="padding: 8px 12px;">
+      <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ==========================================
+     VIEW: HOME
+=========================================== -->
+<main id="view-home" class="view active">
+
+  <!-- HERO: Split Layout -->
+  <div class="container" style="padding-top: var(--space-6);">
+    <div class="hero-split">
+      <div>
+        <div class="badge gold" style="margin-bottom: var(--space-3);"><i class="fas fa-rocket"></i> Africa's Operations OS</div>
+        <h1 class="title-xl">One Platform.<br>Every <span class="gradient-text">Operation.</span></h1>
+        <p class="subtitle">Manage your School, Business, Office, or Training Centre from a single intelligent platform. Track students, staff, inventory, payments, reports, and daily operations — all in one place.</p>
+        
+        <div class="hero-ctas">
+          <button class="btn btn-primary" onclick="App.UI.Modals.open('authModal')"><i class="fas fa-play"></i> Start for Free</button>
+          <button class="btn btn-outline glass-solid" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-calendar"></i> Book a Demo</button>
+          <button class="btn btn-outline glass-solid" onclick="App.UI.scrollToVideo()"><i class="fas fa-video"></i> Watch Video</button>
+        </div>
+
+        <div class="hero-trust">
+          <span><i class="fas fa-check-circle"></i> No credit card required</span>
+          <span><i class="fas fa-check-circle"></i> Free forever plan</span>
+          <span><i class="fas fa-star"></i> 4.9/5 from 50+ orgs</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="images/hero-dashboard.jpg" alt="ComputerSlate Dashboard Preview" loading="eager" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22600%22 height=%22400%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2216%22%3EPlaceholder: images/hero-dashboard.jpg%3C/text%3E%3C/svg%3E'">
+        <div class="hero-badge-float glass-solid elevation-2">
+          <i class="fas fa-check-circle"></i> 150k+ Records Managed
+        </div>
+        <div class="hero-badge-float glass-solid elevation-2">
+          <i class="fas fa-shield-alt"></i> Bank-grade Security
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST BAR: Nigerian Signals -->
+  <div class="container">
+    <div class="trust-bar">
+      <div class="trust-item"><i class="fas fa-map-marker-alt"></i> 🇳🇬 Built for Nigerian Schools & Businesses</div>
+      <div class="trust-item"><i class="fas fa-credit-card"></i> Paystack Integration</div>
+      <div class="trust-item"><i class="fab fa-whatsapp"></i> WhatsApp Support</div>
+      <div class="trust-item"><i class="fas fa-sms"></i> SMS Notifications</div>
+      <div class="trust-item"><i class="fas fa-headset"></i> Local Support</div>
+      <div class="trust-item"><i class="fas fa-money-bill-wave"></i> Naira Pricing</div>
+    </div>
+  </div>
+
+  <!-- LIVE STATS -->
+  <div class="container section-pad text-center">
+    <div class="grid grid-cards">
+      <div class="stat-box glass-solid elevation-1">
+        <div class="stat-num counter" data-target="50" data-suffix="+">0</div>
+        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Active Organizations</div>
+      </div>
+      <div class="stat-box glass-solid elevation-1">
+        <div class="stat-num counter" data-target="150" data-suffix="k">0</div>
+        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Records Managed</div>
+      </div>
+      <div class="stat-box glass-solid elevation-1">
+        <div class="stat-num counter" data-target="99.9" data-suffix="%">0</div>
+        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Platform Uptime</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO WALKTHROUGH -->
+  <div class="container section-pad text-center" id="videoSection">
+    <div class="badge gold"><i class="fas fa-play-circle"></i> Product Walkthrough</div>
+    <h2 class="title-lg">Watch ComputerSlate in Action</h2>
+    <p class="subtitle">See how schools and businesses across Nigeria streamline their operations in 60 seconds.</p>
+    
+    <div class="video-section" onclick="App.UI.showToast('Video coming soon. Replace video/demo.mp4 or embed a YouTube iframe.', 'info')">
+      <div class="video-placeholder">
+        <img src="images/video-cover.jpg" alt="Video Thumbnail" loading="lazy" onerror="this.style.display='none'">
+        <div class="video-overlay">
+          <div class="play-btn"><i class="fas fa-play"></i></div>
+          <p style="color: #fff; margin-top: 16px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">60-Second Walkthrough</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-muted" style="margin-top: var(--space-2); font-size: 13px;"><i class="fas fa-info-circle"></i> When ready, replace <code>video/demo.mp4</code> or swap the placeholder for a YouTube iframe.</p>
+  </div>
+
+  <!-- DOMAINS -->
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-th-large"></i> Choose Your Sector</div>
+    <h2 class="title-lg">Purpose-built for how you work.</h2>
+    <p class="subtitle">Whether you run a school, a shop, or an office, ComputerSlate adapts to your workflow.</p>
+    
+    <div class="h-scroller">
+      <div class="card-domain glass-solid elevation-1" onclick="App.Router.navigate('school')">
+        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+        <h2 class="title-md">For Schools</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Manage enrollments, automate fee tracking, and generate PDF report cards.</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Digital Result Computation</div>
+          <div><i class="fas fa-check-circle"></i> Automated SMS Reminders</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.Router.navigate('school'); event.stopPropagation();">Explore Schools</button>
+      </div>
+      <div class="card-domain glass-solid elevation-1" onclick="App.Router.navigate('business')">
+        <div class="card-icon"><i class="fas fa-store"></i></div>
+        <h2 class="title-md">For Businesses</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Live inventory tracking, fast POS, and Telegram stock alerts.</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Multi-location Inventory</div>
+          <div><i class="fas fa-check-circle"></i> Custom E-commerce Sites</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.Router.navigate('business'); event.stopPropagation();">Explore Businesses</button>
+      </div>
+      <div class="card-domain glass-solid elevation-1" onclick="App.Router.navigate('office')">
+        <div class="card-icon"><i class="fas fa-building"></i></div>
+        <h2 class="title-md">For Offices</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Streamline HR, track assets, handle shift scheduling, and AI integrations.</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Gridzo AI Spreadsheets</div>
+          <div><i class="fas fa-check-circle"></i> HR & Asset Management</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.Router.navigate('office'); event.stopPropagation();">Explore Offices</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE COMPUTERSLATE -->
+  <div class="container section-pad text-center">
+    <div class="badge gold"><i class="fas fa-trophy"></i> Why ComputerSlate</div>
+    <h2 class="title-lg">Everything you need. Nothing you don't.</h2>
+    <p class="subtitle">We built ComputerSlate because African operators deserve software that actually understands their context.</p>
+    
+    <div class="why-grid text-left" style="margin-top: var(--space-6);">
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="title-md">Built for Speed</h3>
+        <p class="text-muted">Optimized for slow networks. Works smoothly even on 2G connections common in rural Nigeria.</p>
+      </div>
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3 class="title-md">Mobile-First</h3>
+        <p class="text-muted">Access everything from your phone. No app download needed — it works perfectly in your browser.</p>
+      </div>
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-brain"></i></div>
+        <h3 class="title-md">AI-Powered</h3>
+        <p class="text-muted">Gridzo AI lives inside your spreadsheets. Generate formulas, remarks, and summaries automatically.</p>
+      </div>
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-comments"></i></div>
+        <h3 class="title-md">Parent & Customer Communication</h3>
+        <p class="text-muted">Send fee reminders, results, and alerts via WhatsApp and SMS — no third-party tools needed.</p>
+      </div>
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-cloud"></i></div>
+        <h3 class="title-md">Cloud Backups</h3>
+        <p class="text-muted">Your data is automatically backed up daily. Never lose a student record or sales receipt again.</p>
+      </div>
+      <div class="why-card glass-solid elevation-1">
+        <div class="why-icon"><i class="fas fa-users-cog"></i></div>
+        <h3 class="title-md">Role-Based Access</h3>
+        <p class="text-muted">Teachers see scores. Bursars see fees. Admins see everything. Clean, secure permissions.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTEGRATIONS -->
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-plug"></i> Integrations</div>
+    <h2 class="title-lg">Works with the tools you already use.</h2>
+    <p class="subtitle">Seamlessly connect your existing payment, communication, and productivity stack.</p>
+    
+    <div class="integrations-row" style="margin-top: var(--space-6);">
+      <div class="int-placeholder"><i class="fas fa-credit-card" style="color:#00C3F7;"></i> Paystack</div>
+      <div class="int-placeholder"><i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp</div>
+      <div class="int-placeholder"><i class="fas fa-sms" style="color:var(--c-gold);"></i> eBulk SMS</div>
+      <div class="int-placeholder"><i class="fab fa-telegram" style="color:#0088cc;"></i> Telegram</div>
+      <div class="int-placeholder"><i class="fas fa-robot" style="color:var(--c-ok);"></i> Groq AI</div>
+      <div class="int-placeholder"><i class="fas fa-gem" style="color:#4285F4;"></i> Gemini</div>
+    </div>
+    <p class="text-muted" style="margin-top: var(--space-3); font-size: 13px;">Replace these placeholders with actual partner logos in <code>images/partner1.png</code> etc.</p>
+  </div>
+
+  <!-- SECURITY -->
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-shield-alt"></i> Security</div>
+    <h2 class="title-lg">Your data is protected.</h2>
+    <p class="subtitle">Enterprise-grade security designed for African compliance and peace of mind.</p>
+    
+    <div class="security-grid" style="margin-top: var(--space-6);">
+      <div class="security-card glass-solid elevation-1">
+        <i class="fas fa-lock"></i>
+        <h3 class="title-md">End-to-End Encryption</h3>
+        <p class="text-muted">All sensitive records are encrypted in transit and at rest using modern TLS standards.</p>
+      </div>
+      <div class="security-card glass-solid elevation-1">
+        <i class="fas fa-user-shield"></i>
+        <h3 class="title-md">Role-Based Access</h3>
+        <p class="text-muted">Granular permissions ensure staff only see what they are authorized to view.</p>
+      </div>
+      <div class="security-card glass-solid elevation-1">
+        <i class="fas fa-history"></i>
+        <h3 class="title-md">Daily Backups</h3>
+        <p class="text-muted">Automated backups with point-in-time recovery. Your records are always safe.</p>
+      </div>
+      <div class="security-card glass-solid elevation-1">
+        <i class="fas fa-cloudflare"></i>
+        <h3 class="title-md">Cloudflare Protected</h3>
+        <p class="text-muted">DDoS protection, SSL, and global CDN for fast, secure access anywhere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-route"></i> How It Works</div>
+    <h2 class="title-lg">Up and running in minutes.</h2>
+    <div class="steps-wrapper">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <h3 class="title-md">Create Your Account</h3>
+        <p class="text-muted">Sign up in 30 seconds. No installation, no IT team needed.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <h3 class="title-md">Import or Start Fresh</h3>
+        <p class="text-muted">Upload your existing Excel/CSV records or start from scratch with our templates.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <h3 class="title-md">Operate Smarter</h3>
+        <p class="text-muted">Invite your team, configure alerts, and manage everything from one screen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER SUCCESS STORIES -->
+  <div class="container section-pad text-center">
+    <div class="badge gold"><i class="fas fa-star"></i> Trusted by Operators</div>
+    <h2 class="title-lg">Loved across Nigeria.</h2>
+    <div class="carousel" style="text-align: left; margin-top: var(--space-4);">
+      <div class="review-card glass-solid elevation-1">
+        <div class="stars">★★★★★</div>
+        <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"Replaced 3 different apps we were using. Parents get WhatsApp updates instantly when fees are paid. The best investment we made this year."</p>
+        <div class="flex items-center gap-2">
+          <img src="images/customer1.jpg" alt="Mrs. Oluwaseun" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#000; display:none; place-items:center; font-weight:700;">OA</div>
+          <div><div style="font-weight:600; font-size:14px;">Mrs. Oluwaseun A.</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">School Principal, Lagos</div></div>
+        </div>
+      </div>
+      <div class="review-card glass-solid elevation-1">
+        <div class="stars">★★★★★</div>
+        <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"The Telegram stock bot is a lifesaver. I can check live inventory for both of my shops straight from my phone. Incredible value."</p>
+        <div class="flex items-center gap-2">
+          <img src="images/customer2.jpg" alt="Chidi Eze" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#000; display:none; place-items:center; font-weight:700;">CE</div>
+          <div><div style="font-weight:600; font-size:14px;">Chidi Eze</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">Retail Owner, Abuja</div></div>
+        </div>
+      </div>
+      <div class="review-card glass-solid elevation-1">
+        <div class="stars">★★★★★</div>
+        <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"Gridzo inside our spreadsheets removed our admin bottleneck. Non-technical staff now handle data tasks that used to need a developer."</p>
+        <div class="flex items-center gap-2">
+          <img src="images/customer3.jpg" alt="Tunde Ibrahim" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#000; display:none; place-items:center; font-weight:700;">TI</div>
+          <div><div style="font-weight:600; font-size:14px;">Tunde Ibrahim</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">Operations Manager, PH</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-tag"></i> Honest Pricing</div>
+    <h2 class="title-lg">Simple pricing. No surprises.</h2>
+    <p class="subtitle">Start free, upgrade when you're ready. We don't hide features behind paywalls.</p>
+    
+    <div class="grid grid-cards" style="text-align: left; margin-top: var(--space-6);">
+      <div class="card-price glass-solid elevation-1">
+        <div class="badge">Starter</div>
+        <div class="price-tag"><span>₦</span>0</div>
+        <p class="text-muted" style="border-bottom: 1px solid rgba(var(--rgb-border),0.1); padding-bottom: 16px; margin-bottom: 16px;">Free forever · Up to 50 records</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Digital Registration</div>
+          <div><i class="fas fa-check-circle"></i> Basic Payment Tracking</div>
+          <div><i class="fas fa-check-circle"></i> Daily Attendance</div>
+          <div><i class="fas fa-check-circle"></i> Email Support</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.Modals.open('authModal')">Start Free</button>
+      </div>
+      
+      <div class="card-price glass-solid elevation-3 featured">
+        <div class="badge gold" style="position: absolute; top:-15px; left:50%; transform:translateX(-50%);">Most Popular</div>
+        <div class="badge">Pro Plan</div>
+        <div class="price-tag"><span>₦</span>25k</div>
+        <p class="text-muted" style="border-bottom: 1px solid rgba(var(--rgb-border),0.1); padding-bottom: 16px; margin-bottom: 16px;">Per term/month · Unlimited records</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Everything in Starter</div>
+          <div><i class="fas fa-check-circle"></i> SMS & WhatsApp Alerts</div>
+          <div><i class="fas fa-check-circle"></i> AI Access (Gridzo, Groq)</div>
+          <div><i class="fas fa-check-circle"></i> Unlimited Inventory</div>
+          <div><i class="fas fa-check-circle"></i> Priority Support</div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="App.UI.showToast('Redirecting to secure checkout...', 'success')">Upgrade to Pro</button>
+      </div>
+
+      <div class="card-price glass-solid elevation-1">
+        <div class="badge">Enterprise</div>
+        <div class="price-tag" style="font-size: 36px; padding: 12px 0;">Custom</div>
+        <p class="text-muted" style="border-bottom: 1px solid rgba(var(--rgb-border),0.1); padding-bottom: 16px; margin-bottom: 16px;">For multi-branch organizations</p>
+        <div class="feat-list">
+          <div><i class="fas fa-check-circle"></i> Multi-location Dashboard</div>
+          <div><i class="fas fa-check-circle"></i> API Access & Branding</div>
+          <div><i class="fas fa-check-circle"></i> Dedicated Account Manager</div>
+          <div><i class="fas fa-check-circle"></i> Custom Integrations</div>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.Modals.open('salesModal')">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="container section-pad text-center">
+    <h2 class="title-lg">Frequently Asked Questions</h2>
+    <div style="max-width: 800px; margin: var(--space-4) auto 0; text-align: left;">
+      <div class="accordion glass-solid elevation-1" style="margin-bottom: 8px; border-radius: var(--radius-sm); padding: 0 var(--space-3);">
+        <button class="acc-header" onclick="App.UI.toggleAccordion(this)">Is my data secure? <i class="fas fa-chevron-down transition"></i></button>
+        <div class="acc-content"><p>Yes. All data is encrypted with TLS in transit and at rest. We run automated daily backups and never sell your data. Our infrastructure is protected by Cloudflare.</p></div>
+      </div>
+      <div class="accordion glass-solid elevation-1" style="margin-bottom: 8px; border-radius: var(--radius-sm); padding: 0 var(--space-3);">
+        <button class="acc-header" onclick="App.UI.toggleAccordion(this)">Do I need to install anything? <i class="fas fa-chevron-down transition"></i></button>
+        <div class="acc-content"><p>No, ComputerSlate is entirely web-based. You can access it from any browser on your phone, tablet, or laptop. There is no app to download.</p></div>
+      </div>
+      <div class="accordion glass-solid elevation-1" style="margin-bottom: 8px; border-radius: var(--radius-sm); padding: 0 var(--space-3);">
+        <button class="acc-header" onclick="App.UI.toggleAccordion(this)">Can I import my existing Excel records? <i class="fas fa-chevron-down transition"></i></button>
+        <div class="acc-content"><p>Yes! During onboarding, we provide a simple template you can fill out to bulk-import your students, inventory, or staff instantly. Most migrations take under 10 minutes.</p></div>
+      </div>
+      <div class="accordion glass-solid elevation-1" style="margin-bottom: 8px; border-radius: var(--radius-sm); padding: 0 var(--space-3);">
+        <button class="acc-header" onclick="App.UI.toggleAccordion(this)">Do you support multiple branches? <i class="fas fa-chevron-down transition"></i></button>
+        <div class="acc-content"><p>Absolutely. Our Enterprise plan includes a multi-location dashboard so you can manage different branches, shops, or campuses from a single admin account.</p></div>
+      </div>
+      <div class="accordion glass-solid elevation-1" style="margin-bottom: 8px; border-radius: var(--radius-sm); padding: 0 var(--space-3);">
+        <button class="acc-header" onclick="App.UI.toggleAccordion(this)">What happens if I exceed 50 records on the free plan? <i class="fas fa-chevron-down transition"></i></button>
+        <div class="acc-content"><p>You will receive a gentle reminder to upgrade. We never delete your data — you can always view and export it, but new entries will require a Pro plan.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="container section-pad text-center">
+    <div class="final-cta">
+      <h2 class="title-lg">Ready to streamline your operations?</h2>
+      <p class="text-muted">Join 50+ Nigerian schools and businesses already using ComputerSlate. Start free today — no credit card required.</p>
+      <div class="flex justify-center gap-3" style="flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="App.UI.Modals.open('authModal')"><i class="fas fa-rocket"></i> Start for Free</button>
+        <button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-envelope"></i> Contact Sales</button>
+      </div>
+      <div class="hero-trust" style="justify-content: center; margin-top: var(--space-4);">
+        <span><i class="fas fa-check-circle"></i> Free 14-day Pro trial</span>
+        <span><i class="fas fa-check-circle"></i> Cancel anytime</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="container section-pad text-center">
+    <div class="glass-solid elevation-2" style="border-radius: var(--radius-lg); padding: var(--space-6); max-width: 600px; margin: 0 auto;">
+      <h3 class="title-md">Join our Newsletter</h3>
+      <p class="text-muted" style="margin-bottom: var(--space-3);">Get tips on running operations efficiently in Africa.</p>
+      <form onsubmit="App.API.subscribeNewsletter(event)" class="flex gap-2" style="flex-wrap: wrap;">
+        <input type="email" required class="form-input" placeholder="Enter your email..." style="flex: 1; min-width: 200px;">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- ==========================================
+     VIEW: SCHOOLS
+=========================================== -->
+<main id="view-school" class="view">
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-graduation-cap"></i> School Operations</div>
+    <h1 class="title-xl">Everything your school needs<br><span class="gradient-text">in one place.</span></h1>
+    <p class="subtitle">Stop switching between apps. ComputerSlate gives every staff member exactly the tools they need — no training required.</p>
+    
+    <div class="glass-solid elevation-2" style="max-width: 700px; margin: 0 auto var(--space-8); border-radius: var(--radius-lg); overflow: hidden;">
+      <img src="images/school-dashboard.jpg" alt="School Dashboard" style="width:100%; display:block;" loading="lazy" onerror="this.style.display='none'">
+    </div>
+
+    <div class="glass-solid elevation-2" style="max-width: 600px; margin: 0 auto var(--space-8); padding: var(--space-4); border-radius: var(--radius-lg); text-align: left;">
+      <h3 class="title-md" style="font-size: 16px;">Access your school portal</h3>
+      <div style="position: relative; margin-top: var(--space-2);">
+        <i class="fas fa-search" style="position: absolute; left: 16px; top: 16px; color: rgb(var(--rgb-muted));"></i>
+        <input type="text" id="schoolSearch" class="form-input" style="padding-left: 44px;" placeholder="Search for your school..." oninput="App.UI.filterSchools(this.value)">
+        <div id="schoolDropdown" class="glass-solid elevation-2" style="display:none; position: absolute; top: 100%; left: 0; right: 0; border-radius: var(--radius-sm); margin-top: 8px; max-height: 200px; overflow-y: auto; z-index: 10;">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-pad">
+      <div class="badge"><i class="fas fa-route"></i> How It Works</div>
+      <h2 class="title-lg">Up and running in 3 simple steps.</h2>
+      <div class="steps-wrapper">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <h3 class="title-md">Choose Your School</h3>
+          <p class="text-muted">Find your school in our directory and click to open your portal.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <h3 class="title-md">Sign In Securely</h3>
+          <p class="text-muted">Log in with your staff ID or email. Role-based access shows you exactly what you need.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <h3 class="title-md">Manage Everything</h3>
+          <p class="text-muted">Register students, track fees, publish results, and communicate with parents — all in one screen.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cards text-left section-pad">
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: Enrollment Wizard', 'info')">
+        <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+        <h3 class="title-md">Student Registration</h3>
+        <p class="text-muted">5-step enrollment wizard captures name, photo, health records, contact preferences, and fees automatically.</p>
+        <span class="tag-line">students · enrollment</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: Fee Tracking', 'info')">
+        <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+        <h3 class="title-md">Fee & Payment Tracking</h3>
+        <p class="text-muted">Track class fees, term fees, and add-ons. Generate invoices, record payments, and send SMS reminders instantly.</p>
+        <span class="tag-line">finance · SMS</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: PDF Reports', 'info')">
+        <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+        <h3 class="title-md">Results & Report Cards</h3>
+        <p class="text-muted">Record scores per subject, auto-assign grades, calculate class positions, and generate beautiful PDF report cards.</p>
+        <span class="tag-line">academics · PDF</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: Attendance', 'info')">
+        <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3 class="title-md">Attendance Management</h3>
+        <p class="text-muted">Mark attendance class by class with one tap. Track present, absent, sick, and late with daily summaries.</p>
+        <span class="tag-line">attendance · daily</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: Timetable', 'info')">
+        <div class="card-icon"><i class="fas fa-table"></i></div>
+        <h3 class="title-md">Timetable Builder</h3>
+        <p class="text-muted">Drag-and-drop visual timetable grid. Assign teachers, subjects, and periods with Break/Free period support.</p>
+        <span class="tag-line">scheduling · timetable</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: AI Insights', 'info')">
+        <div class="card-icon"><i class="fas fa-robot"></i></div>
+        <h3 class="title-md">AI Insights</h3>
+        <p class="text-muted">Powered by Groq, Gemini, and Claude. Generate fee reminders, student remarks, and financial summaries in seconds.</p>
+        <span class="tag-line">AI · Groq · Gemini</span>
+      </div>
+      <div class="card-feat glass-solid elevation-1" onclick="App.UI.showToast('Feature Detail: WhatsApp Alerts', 'info')">
+        <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3 class="title-md">WhatsApp & SMS Alerts</h3>
+        <p class="text-muted">Instant notifications to parents for payments, results, and reminders via eBulk SMS and WhatsApp links.</p>
+        <span class="tag-line">messaging · parents</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ==========================================
+     VIEW: BUSINESS
+=========================================== -->
+<main id="view-business" class="view">
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-store"></i> Business & Retail</div>
+    <h1 class="title-xl">Total control over your<br><span class="gradient-text">Operations.</span></h1>
+    
+    <div class="glass-solid elevation-2" style="max-width: 700px; margin: 0 auto var(--space-8); border-radius: var(--radius-lg); overflow: hidden;">
+      <img src="images/business-dashboard.jpg" alt="Business Dashboard" style="width:100%; display:block;" loading="lazy" onerror="this.style.display='none'">
+    </div>
+
+    <div class="highlight-box text-left">
+      <div>
+        <div class="card-icon" style="font-size: 32px;"><i class="fab fa-telegram-plane"></i></div>
+        <h2 class="title-lg" style="font-size: 24px;">Inventory & Stock Bot</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3);">A two-location shop needed live stock visibility from a phone, without the cost of POS software or a database.</p>
+        <p class="text-muted">A Telegram-based inventory bot, now on its fifth iteration, with a queued update architecture that resolved an early message-looping issue and keeps both locations in sync in real time.</p>
+        <button class="btn btn-primary" style="margin-top: var(--space-3);" onclick="App.UI.showToast('Opening Bot Demo', 'info')">View Bot Demo</button>
+      </div>
+      <div>
+        <div class="card-icon" style="color: var(--c-blue); background: rgba(37,99,235,0.1); font-size: 32px;"><i class="fas fa-globe"></i></div>
+        <h2 class="title-lg" style="font-size: 24px;">Custom Website Creation</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3);">Give your business the digital storefront it deserves.</p>
+        <p class="text-muted">We build fully integrated, lightning-fast business websites that connect directly to your ComputerSlate inventory. When an item sells in-store, your website updates automatically.</p>
+        <button class="btn btn-outline" style="margin-top: var(--space-3);" onclick="App.UI.Modals.open('salesModal')">Request a Website</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cards text-left">
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-boxes-stacked"></i></div>
+        <h3 class="title-md">Live Inventory</h3>
+        <p class="text-muted">Know exactly what's on the shelf and in the store room. Updates in real-time as sales happen.</p>
+      </div>
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-cash-register"></i></div>
+        <h3 class="title-md">Point of Sale (POS)</h3>
+        <p class="text-muted">Lightning fast checkout screen. Works on tablets and laptops. Print or email digital receipts.</p>
+      </div>
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+        <h3 class="title-md">Sales Analytics</h3>
+        <p class="text-muted">See your best-selling items, daily profit margins, and peak sales periods at a glance.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ==========================================
+     VIEW: OFFICE
+=========================================== -->
+<main id="view-office" class="view">
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-building"></i> Office Management</div>
+    <h1 class="title-xl">Manage your team & workflows<br><span class="gradient-text">Seamlessly.</span></h1>
+    
+    <div class="glass-solid elevation-2" style="max-width: 700px; margin: 0 auto var(--space-8); border-radius: var(--radius-lg); overflow: hidden;">
+      <img src="images/office-dashboard.jpg" alt="Office Dashboard" style="width:100%; display:block;" loading="lazy" onerror="this.style.display='none'">
+    </div>
+
+    <div class="highlight-box text-left" style="grid-template-columns: 1.2fr 1fr;">
+      <div>
+        <div class="card-icon" style="color: var(--c-ok); background: rgba(22,163,74,0.1); font-size: 32px;"><i class="fas fa-table-cells"></i></div>
+        <h2 class="title-lg">Gridzo — AI Inside the Spreadsheet</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-3);">Non-technical staff kept bottlenecking on formula fixes and data cleanup, needing a developer for tasks that should have been self-serve.</p>
+        <p class="text-muted" style="margin-bottom: var(--space-3);">An AI assistant that lives inside the spreadsheet itself — it reads the data, understands what's being asked, and handles formulas and cleanup directly.</p>
+        <a href="https://gridzo.computerslate.com.ng" target="_blank" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> Try Gridzo AI</a>
+      </div>
+      <div style="background: rgb(var(--rgb-bg)); border: 1px solid rgba(var(--rgb-border),0.1); border-radius: var(--radius-md); padding: var(--space-4); font-family: var(--font-mono); font-size: 14px;">
+        <div style="color: var(--c-ok); margin-bottom: 8px;">// User Prompt</div>
+        <div style="color: rgb(var(--rgb-text)); line-height: 1.6;">"Sum up column B if the status in column D is pending, and highlight the rows red."</div>
+        <div style="color: var(--c-gold); margin: 24px 0 12px;">// Gridzo Execution</div>
+        <div style="color: rgb(var(--rgb-muted)); line-height: 1.8;">Generating Formula...<br>Applying conditional formatting...<br><span style="color:var(--c-ok);">Data updated successfully.</span></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cards text-left">
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-users"></i></div>
+        <h3 class="title-md">HR & Employee Hub</h3>
+        <p class="text-muted">Centralized directory for all staff. Track roles, contact info, and emergency details securely.</p>
+      </div>
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-laptop"></i></div>
+        <h3 class="title-md">Asset Management</h3>
+        <p class="text-muted">Assign laptops, vehicles, or keys to staff. Track condition and return dates easily.</p>
+      </div>
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-file-invoice"></i></div>
+        <h3 class="title-md">Client Invoicing</h3>
+        <p class="text-muted">Generate professional service invoices. Track paid, pending, and overdue accounts instantly.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ==========================================
+     VIEW: TRAINING
+=========================================== -->
+<main id="view-training" class="view">
+  <div class="container section-pad text-center">
+    <div class="badge"><i class="fas fa-book-open"></i> Academy</div>
+    <h1 class="title-xl">Learn ComputerSlate in<br><span class="gradient-text">minutes, not days.</span></h1>
+    <p class="subtitle">Step-by-step guides and reference sheets for every role — free inside your portal.</p>
+    
+    <div class="grid grid-cards text-left" style="margin-bottom: var(--space-6);">
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+        <h3 class="title-md">Administrator Guide</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Onboard your school/business, manage staff accounts, configure settings, and read the full analytics dashboard.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">Setup</span><span class="tag-line">Users</span><span class="tag-line">Dashboard</span><span class="tag-line">Reports</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3 class="title-md">Teacher & Class Teacher</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Mark attendance, enter subject scores, manage result sheets, and communicate with parents digitally.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">Attendance</span><span class="tag-line">Score Entry</span><span class="tag-line">Report Cards</span><span class="tag-line">Timetable</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-coins"></i></div>
+        <h3 class="title-md">Bursar & Finance</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Record payments, generate invoices, track defaulters through the debt-stage system, and send reminders.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">Fee Recording</span><span class="tag-line">Invoices</span><span class="tag-line">SMS Reminders</span><span class="tag-line">Debt Stages</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-brain"></i></div>
+        <h3 class="title-md">AI Tools Workshop</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Auto-generate student remarks, craft fee reminder messages, and summarise term performance in one click.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">Auto Remarks</span><span class="tag-line">Fee Reminders</span><span class="tag-line">Groq · Gemini</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+      
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
+        <h3 class="title-md">Reports & Documents</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Generate, customise, and share PDF report cards, ID cards, and fee receipts. Includes printing tips.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">PDF Report Cards</span><span class="tag-line">ID Cards</span><span class="tag-line">Receipts</span><span class="tag-line">Print Guide</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+      
+      <div class="card-feat glass-solid elevation-1">
+        <div class="card-icon"><i class="fas fa-life-ring"></i></div>
+        <h3 class="title-md">Support & Troubleshooting</h3>
+        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Common issues, FAQs, and step-by-step fixes. Escalate to our WhatsApp line — we respond within the hour.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
+          <span class="tag-line">FAQs</span><span class="tag-line">Error Fixes</span><span class="tag-line">WhatsApp Help</span>
+        </div>
+        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+      </div>
+    </div>
+    
+    <div style="font-size: 14px; color: rgb(var(--rgb-muted));">
+      <i class="fas fa-info-circle text-gold" style="margin-right: 6px;"></i> All training materials are available inside the portal. Log in with your credentials to get started.
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <a href="https://victoradewumi.com" target="_blank" class="badge glass-solid" style="padding: 12px 24px; text-transform: none; font-size: 14px; font-family: var(--font-mono); margin-bottom: var(--space-4); transition: var(--transition);" onmouseover="this.style.borderColor='var(--c-gold)'" onmouseout="this.style.borderColor='rgba(var(--rgb-border),0.1)'">
+      <i class="fas fa-code text-gold"></i> Created & Engineered by Victor Adewumi
+    </a>
+    
+    <div class="flex justify-center gap-3" style="flex-wrap: wrap; margin-bottom: var(--space-3); font-size: 14px; color: rgb(var(--rgb-muted));">
+      <a onclick="App.Router.navigate('home')">Home</a>
+      <a onclick="App.Router.navigate('training')">Academy</a>
+      <a onclick="App.UI.showToast('Privacy Policy coming soon', 'info')">Privacy Policy</a>
+      <a onclick="App.UI.Modals.open('salesModal')">Contact Us</a>
+      <a href="https://gridzo.computerslate.com.ng" target="_blank" class="text-gold">Gridzo AI</a>
+    </div>
+    <div style="font-size: 12px; color: rgb(var(--rgb-muted)); opacity: 0.7;">
+      &copy; <span id="year"></span> ComputerSlate Technologies. All rights reserved.<br>Secured by Cloudflare. Made in Nigeria 🇳🇬.
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+
+<!-- Command Palette Modal -->
+<div id="cmdPalette" class="modal-backdrop" onclick="App.UI.Modals.closeOutside(event, 'cmdPalette')">
+  <div class="modal-content" style="padding: var(--space-2) var(--space-4) var(--space-4);">
+    <input type="text" id="cmdInput" class="cmd-input" placeholder="What do you want to do?..." oninput="App.UI.filterCmd(this.value)">
+    <div class="cmd-list" id="cmdList">
+      <div class="cmd-item" onclick="App.Router.navigate('home'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-home"></i> Go to Home</div>
+      <div class="cmd-item" onclick="App.Router.navigate('school'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-graduation-cap"></i> View School Features</div>
+      <div class="cmd-item" onclick="App.Router.navigate('business'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-store"></i> View Business Features</div>
+      <div class="cmd-item" onclick="App.Theme.toggle(); App.UI.Modals.close('cmdPalette');"><i class="fas fa-moon"></i> Toggle Dark/Light Theme</div>
+      <div class="cmd-item" onclick="window.open('https://gridzo.computerslate.com.ng'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-sparkles"></i> Open Gridzo AI</div>
+      <div class="cmd-item" onclick="App.UI.Modals.close('cmdPalette'); App.UI.Modals.open('salesModal');"><i class="fas fa-envelope"></i> Contact Sales</div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Sales Modal -->
+<div id="salesModal" class="modal-backdrop" onclick="App.UI.Modals.closeOutside(event, 'salesModal')">
+  <div class="modal-content">
+    <button class="modal-close" onclick="App.UI.Modals.close('salesModal')"><i class="fas fa-times"></i></button>
+    <h3 class="title-md">Contact Sales</h3>
+    <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Leave your details and we'll get you onboarded.</p>
+    <form onsubmit="App.API.submitSalesForm(event)">
+      <div class="form-group"><label>Organization Name</label><input type="text" required class="form-input" placeholder="e.g. Zenith Academy"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" required class="form-input" placeholder="admin@domain.com"></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" class="form-input" placeholder="e.g. 08012345678"></div>
+      <button type="submit" class="btn btn-primary btn-full">Send Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- Auth Modal (Mock) -->
+<div id="authModal" class="modal-backdrop" onclick="App.UI.Modals.closeOutside(event, 'authModal')">
+  <div class="modal-content text-center">
+    <button class="modal-close" onclick="App.UI.Modals.close('authModal')"><i class="fas fa-times"></i></button>
+    <div style="font-size: 40px; color: var(--c-gold); margin-bottom: 16px;"><i class="fas fa-lock"></i></div>
+    <h3 class="title-md">Secure Login</h3>
+    <p class="text-muted" style="margin-bottom: var(--space-4); font-size: 14px;">Enter your portal credentials to continue.</p>
+    <form onsubmit="App.API.mockLogin(event)">
+      <div class="form-group"><input type="email" required class="form-input" placeholder="Email Address"></div>
+      <div class="form-group"><input type="password" required class="form-input" placeholder="Password"></div>
+      <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+    </form>
+  </div>
+</div>
+
+<!-- ==========================================
+     APPLICATION LOGIC
+=========================================== -->
+<script>
+const MOCK_SCHOOLS = [
+  { name: "Beacon Academy", loc: "Lagos, NG" },
+  { name: "Crown Heights College", loc: "Abuja, FCT" },
+  { name: "Excel International", loc: "Port Harcourt" }
+];
+
+const App = {
+  Config: {
+    routes: ['home', 'school', 'business', 'office', 'training']
+  },
+
+  Storage: {
+    get: (key) => localStorage.getItem(`cs_${key}`),
+    set: (key, val) => localStorage.setItem(`cs_${key}`, val)
+  },
+
+  Theme: {
+    init() {
+      const saved = App.Storage.get('theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (systemDark ? 'dark' : 'light');
+      this.apply(theme);
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!App.Storage.get('theme')) this.apply(e.matches ? 'dark' : 'light');
+      });
+    },
+    toggle() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      App.Storage.set('theme', next);
+      this.apply(next);
+      App.UI.showToast(`${next.charAt(0).toUpperCase() + next.slice(1)} mode activated`, 'info');
+    },
+    apply(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const icon = document.getElementById('themeIcon');
+      if(icon) icon.className = theme === 'dark' ? 'fas fa-sun text-gold' : 'fas fa-moon';
+    }
+  },
+
+  Router: {
+    init() {
+      window.addEventListener('hashchange', () => this.handleHash());
+      setTimeout(() => this.handleHash(), 50);
+    },
+    navigate(route) {
+      window.location.hash = route;
+    },
+    handleHash() {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      const route = App.Config.routes.includes(hash) ? hash : 'home';
+      
+      const loader = document.getElementById('page-loader');
+      loader.classList.add('show');
+      
+      setTimeout(() => {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.getElementById(`view-${route}`).classList.add('active');
+        
+        App.UI.updateNavIndicator(route);
+        window.scrollTo(0, 0);
+        loader.classList.remove('show');
+        
+        if(route === 'home') App.UI.initCounters();
+      }, 300);
+    }
+  },
+
+  UI: {
+    init() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      this.initCounters();
+      this.initKeyboardShortcuts();
+      
+      const btt = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 300) btt.classList.add('visible');
+        else btt.classList.remove('visible');
+      });
+    },
+
+    scrollToVideo() {
+      const el = document.getElementById('videoSection');
+      if(el) el.scrollIntoView({ behavior: 'smooth' });
+    },
+
+    updateNavIndicator(route) {
+      const btns = document.querySelectorAll('.nav-btn');
+      let activeBtn = null;
+      
+      btns.forEach(btn => {
+        const isActive = btn.dataset.target === route;
+        btn.classList.toggle('active', isActive);
+        if(isActive) activeBtn = btn;
+      });
+
+      const indicator = document.getElementById('navIndicator');
+      
+      if(activeBtn && indicator) {
+        setTimeout(() => {
+          indicator.style.width = `${activeBtn.offsetWidth}px`;
+          indicator.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
+          activeBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }, 50);
+      }
+    },
+
+    showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      
+      const iconMap = { info: 'fa-info-circle', success: 'fa-check-circle', error: 'fa-exclamation-circle' };
+      toast.innerHTML = `<i class="fas ${iconMap[type] || 'fa-bell'}"></i> <span>${message}</span>`;
+      
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    },
+
+    Modals: {
+      open(id) {
+        const modal = document.getElementById(id);
+        if(modal) {
+          modal.classList.add('active');
+          if(id === 'cmdPalette') setTimeout(() => document.getElementById('cmdInput').focus(), 100);
+        }
+      },
+      close(id) {
+        const modal = document.getElementById(id);
+        if(modal) modal.classList.remove('active');
+      },
+      closeOutside(e, id) {
+        if (e.target.id === id) this.close(id);
+      }
+    },
+
+    toggleAccordion(btn) {
+      const parent = btn.parentElement;
+      parent.classList.toggle('active');
+    },
+
+    initCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            let count = 0;
+            const inc = target / 50;
+            const timer = setInterval(() => {
+              count += inc;
+              if (count >= target) {
+                el.innerText = target + suffix;
+                clearInterval(timer);
+              } else {
+                el.innerText = (target % 1 !== 0 ? count.toFixed(1) : Math.floor(count)) + suffix;
+              }
+            }, 30);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      counters.forEach(c => observer.observe(c));
+    },
+
+    initKeyboardShortcuts() {
+      window.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          this.Modals.open('cmdPalette');
+        }
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.modal-backdrop.active').forEach(m => m.classList.remove('active'));
+        }
+      });
+    },
+
+    filterCmd(query) {
+      query = query.toLowerCase();
+      const items = document.querySelectorAll('#cmdList .cmd-item');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    },
+
+    filterSchools(query) {
+      const dropdown = document.getElementById('schoolDropdown');
+      if(query.length < 2) {
+        dropdown.style.display = 'none';
+        return;
+      }
+      
+      query = query.toLowerCase();
+      const filtered = MOCK_SCHOOLS.filter(s => s.name.toLowerCase().includes(query) || s.loc.toLowerCase().includes(query));
+      
+      if(filtered.length > 0) {
+        dropdown.innerHTML = filtered.map(s => `
+          <div class="cmd-item" onclick="App.UI.selectSchool('${s.name}')">
+            <i class="fas fa-building text-gold"></i>
+            <div>
+              <div style="font-weight: 600; color: rgb(var(--rgb-text));">${s.name}</div>
+              <div style="font-size: 12px;">${s.loc}</div>
+            </div>
+          </div>
+        `).join('');
+      } else {
+        dropdown.innerHTML = `<div class="cmd-item text-muted justify-center">No schools found</div>`;
+      }
+      dropdown.style.display = 'block';
+    },
+
+    selectSchool(name) {
+      document.getElementById('schoolSearch').value = name;
+      document.getElementById('schoolDropdown').style.display = 'none';
+      this.showToast(`Selected ${name}`, 'success');
+      setTimeout(() => this.Modals.open('authModal'), 500);
+    }
+  },
+
+  API: {
+    submitSalesForm(e) {
+      e.preventDefault();
+      App.UI.Modals.close('salesModal');
+      App.UI.showToast("Request received! Our team will contact you shortly.", "success");
+      e.target.reset();
+    },
+    mockLogin(e) {
+      e.preventDefault();
+      App.UI.Modals.close('authModal');
+      App.UI.showToast("Login simulation successful. Redirecting to Dashboard...", "success");
+      e.target.reset();
+    },
+    subscribeNewsletter(e) {
+      e.preventDefault();
+      App.UI.showToast("Subscribed successfully! Check your inbox.", "success");
+      e.target.reset();
+    }
+  },
+
+  start() {
+    this.Theme.init();
+    this.UI.init();
+    this.Router.init();
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => App.start());
+</script>
+</body>
+</html>
