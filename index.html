@@ -1183,16 +1183,16 @@ const MOCK_SCHOOLS = [
 
 const App = {
   Redirects: {
-    data: {"links":{"training":"https://computerslate-training-portal.adevictoraiden.workers.dev/","contact_email":"mailto:adevictoraiden@gmail.com","telegram":"https://t.me/","gridzo":"https://gridzo.computerslate.com.ng","creator":"https://victoradewumi.com","school_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Starter","school_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Pro","school_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Enterprise","business_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Starter","business_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Pro","business_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Enterprise","office_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Starter","office_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Pro","office_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Enterprise"},"pricing":{"school":[{"name":"Starter","price":"?0","note":"Free forever ? Up to 50 students","features":["Digital registration","Fee tracking","Daily attendance","Email support"],"action":"Start Free","link":"school_starter"},{"name":"School Pro","price":"?25k","note":"Per term ? Unlimited students","features":["Everything in Starter","Telegram alerts","AI tools","Priority support"],"action":"Choose School Pro","link":"school_pro"},{"name":"Enterprise","price":"Custom","note":"For multi-campus schools","features":["Multi-campus dashboard","Custom branding","Dedicated onboarding"],"action":"Contact Sales","link":"school_enterprise"}],"business":[{"name":"Starter","price":"?0","note":"Free forever ? One location","features":["Inventory basics","Sales records","Daily reports","Email support"],"action":"Start Free","link":"business_starter"},{"name":"Business Pro","price":"?30k","note":"Per month ? Unlimited products","features":["POS and inventory","Telegram alerts","AI insights","Priority support"],"action":"Choose Business Pro","link":"business_pro"},{"name":"Enterprise","price":"Custom","note":"For multiple locations","features":["Multi-location dashboard","API access","Custom integrations"],"action":"Contact Sales","link":"business_enterprise"}],"office":[{"name":"Starter","price":"?0","note":"Free forever ? Small teams","features":["Team directory","Task tracking","Basic reports","Email support"],"action":"Start Free","link":"office_starter"},{"name":"Office Pro","price":"?20k","note":"Per month ? Unlimited staff","features":["HR tools","Asset management","Telegram alerts","Priority support"],"action":"Choose Office Pro","link":"office_pro"},{"name":"Enterprise","price":"Custom","note":"For larger organizations","features":["Advanced permissions","Custom workflows","Dedicated manager"],"action":"Contact Sales","link":"office_enterprise"}]}},
+    data: {"links":{"training":"https://computerslate-training-portal.adevictoraiden.workers.dev/","contact_email":"mailto:adevictoraiden@gmail.com","telegram":"https://t.me/","gridzo":"https://gridzo.computerslate.com.ng","creator":"https://victoradewumi.com","school_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Starter","school_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Pro","school_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Enterprise","business_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Starter","business_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Pro","business_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Enterprise","office_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Starter","office_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Pro","office_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Enterprise"},"pricing":{"school":[{"name":"Starter","price":"₦0","note":"Free forever • Up to 50 students","features":["Digital registration","Fee tracking","Daily attendance","Email support"],"action":"Start Free","link":"school_starter"},{"name":"School Pro","price":"₦25k","note":"Per term • Unlimited students","features":["Everything in Starter","Telegram alerts","AI tools","Priority support"],"action":"Choose School Pro","link":"school_pro"},{"name":"Enterprise","price":"Custom","note":"For multi-campus schools","features":["Multi-campus dashboard","Custom branding","Dedicated onboarding"],"action":"Contact Sales","link":"school_enterprise"}],"business":[{"name":"Starter","price":"₦0","note":"Free forever • One location","features":["Inventory basics","Sales records","Daily reports","Email support"],"action":"Start Free","link":"business_starter"},{"name":"Business Pro","price":"₦30k","note":"Per month • Unlimited products","features":["POS and inventory","Telegram alerts","AI insights","Priority support"],"action":"Choose Business Pro","link":"business_pro"},{"name":"Enterprise","price":"Custom","note":"For multiple locations","features":["Multi-location dashboard","API access","Custom integrations"],"action":"Contact Sales","link":"business_enterprise"}],"office":[{"name":"Starter","price":"₦0","note":"Free forever • Small teams","features":["Team directory","Task tracking","Basic reports","Email support"],"action":"Start Free","link":"office_starter"},{"name":"Office Pro","price":"₦20k","note":"Per month • Unlimited staff","features":["HR tools","Asset management","Telegram alerts","Priority support"],"action":"Choose Office Pro","link":"office_pro"},{"name":"Enterprise","price":"Custom","note":"For larger organizations","features":["Advanced permissions","Custom workflows","Dedicated manager"],"action":"Contact Sales","link":"office_enterprise"}]}},
     async init() {
-      try { const loaded = await fetch('redirects.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null); if (loaded && loaded.links && loaded.pricing) this.data = loaded; } catch (_) { /* Local file mode uses the embedded fallback above. */ }
+      try { const loaded = await fetch('redirects.json', { cache: 'no-store' }).then(r => r.ok • r.json() : null); if (loaded && loaded.links && loaded.pricing) this.data = loaded; } catch (_) { /* Local file mode uses the embedded fallback above. */ }
       document.querySelectorAll('[data-redirect]').forEach(el => el.addEventListener('click', event => { event.preventDefault(); this.go(el.dataset.redirect); }));
     },
-    go(key) { const url = this.data.links && this.data.links[key]; if (url) window.open(url, url.startsWith('mailto:') ? '_self' : '_blank', 'noopener'); else App.UI.showToast('Set the ' + key + ' link in redirects.json.', 'info'); },
-    salesMail(form) { const email = (this.data.links && this.data.links.contact_email) || 'mailto:adevictoraiden@gmail.com'; const subject = encodeURIComponent('ComputerSlate sales request'); const body = encodeURIComponent('Organization: ' + form.elements.organization.value + '\nEmail: ' + form.elements.email.value + '\nPhone: ' + form.elements.phone.value); window.location.href = email + (email.includes('?') ? '&' : '?') + 'subject=' + subject + '&body=' + body; }
+    go(key) { const url = this.data.links && this.data.links[key]; if (url) window.open(url, url.startsWith('mailto:') • '_self' : '_blank', 'noopener'); else App.UI.showToast('Set the ' + key + ' link in redirects.json.', 'info'); },
+    salesMail(form) { const email = (this.data.links && this.data.links.contact_email) || 'mailto:adevictoraiden@gmail.com'; const subject = encodeURIComponent('ComputerSlate sales request'); const body = encodeURIComponent('Organization: ' + form.elements.organization.value + '\nEmail: ' + form.elements.email.value + '\nPhone: ' + form.elements.phone.value); window.location.href = email + (email.includes('?') • '&' : '?') + 'subject=' + subject + '&body=' + body; }
   },
   Pricing: {
-    render(category) { const plans = (App.Redirects.data.pricing && App.Redirects.data.pricing[category]) || []; const host = document.getElementById('pricingCards'); if (!host) return; document.querySelectorAll('[data-pricing]').forEach(button => button.classList.toggle('active', button.dataset.pricing === category)); host.innerHTML = plans.map((plan, index) => '<div class="card-price glass-solid elevation-' + (index === 1 ? '3 featured' : '1') + '">' + (index === 1 ? '<div class="badge gold" style="position:absolute;top:-15px;left:50%;transform:translateX(-50%);">Most Popular</div>' : '') + '<div class="badge">' + plan.name + '</div><div class="price-tag">' + plan.price + '</div><p class="text-muted" style="border-bottom:1px solid rgba(var(--rgb-border),.1);padding-bottom:16px;margin-bottom:16px;">' + plan.note + '</p><div class="feat-list">' + plan.features.map(feature => '<div><i class="fas fa-check-circle"></i> ' + feature + '</div>').join('') + '</div><button class="btn ' + (index === 1 ? 'btn-primary' : 'btn-outline') + ' btn-full" onclick="App.Redirects.go(\'' + plan.link + '\')">' + plan.action + '</button></div>').join(''); }
+    render(category) { const plans = (App.Redirects.data.pricing && App.Redirects.data.pricing[category]) || []; const host = document.getElementById('pricingCards'); if (!host) return; document.querySelectorAll('[data-pricing]').forEach(button => button.classList.toggle('active', button.dataset.pricing === category)); host.innerHTML = plans.map((plan, index) => '<div class="card-price glass-solid elevation-' + (index === 1 • '3 featured' : '1') + '">' + (index === 1 • '<div class="badge gold" style="position:absolute;top:-15px;left:50%;transform:translateX(-50%);">Most Popular</div>' : '') + '<div class="badge">' + plan.name + '</div><div class="price-tag">' + plan.price + '</div><p class="text-muted" style="border-bottom:1px solid rgba(var(--rgb-border),.1);padding-bottom:16px;margin-bottom:16px;">' + plan.note + '</p><div class="feat-list">' + plan.features.map(feature => '<div><i class="fas fa-check-circle"></i> ' + feature + '</div>').join('') + '</div><button class="btn ' + (index === 1 • 'btn-primary' : 'btn-outline') + ' btn-full" onclick="App.Redirects.go(\'' + plan.link + '\')">' + plan.action + '</button></div>').join(''); }
   },
   Config: {
     routes: ['home', 'school', 'business', 'office', 'training']
@@ -1211,7 +1211,7 @@ const App = {
     },
     toggle() {
       const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
+      const next = current === 'dark' • 'light' : 'dark';
       App.Storage.set('theme', next);
       this.apply(next);
       App.UI.showToast(`${next.charAt(0).toUpperCase() + next.slice(1)} mode activated`, 'info');
@@ -1219,7 +1219,7 @@ const App = {
     apply(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       const icon = document.getElementById('themeIcon');
-      if(icon) icon.className = theme === 'dark' ? 'fas fa-sun text-gold' : 'fas fa-moon';
+      if(icon) icon.className = theme === 'dark' • 'fas fa-sun text-gold' : 'fas fa-moon';
     }
   },
 
@@ -1233,7 +1233,7 @@ const App = {
     },
     handleHash() {
       const hash = window.location.hash.replace('#', '') || 'home';
-      const route = App.Config.routes.includes(hash) ? hash : 'home';
+      const route = App.Config.routes.includes(hash) • hash : 'home';
       
       const loader = document.getElementById('page-loader');
       loader.classList.add('show');
@@ -1347,7 +1347,7 @@ const App = {
                 el.innerText = target + suffix;
                 clearInterval(timer);
               } else {
-                el.innerText = (target % 1 !== 0 ? count.toFixed(1) : Math.floor(count)) + suffix;
+                el.innerText = (target % 1 !== 0 • count.toFixed(1) : Math.floor(count)) + suffix;
               }
             }, 30);
             observer.unobserve(el);
@@ -1375,7 +1375,7 @@ const App = {
       const items = document.querySelectorAll('#cmdList .cmd-item');
       items.forEach(item => {
         const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(query) ? 'flex' : 'none';
+        item.style.display = text.includes(query) • 'flex' : 'none';
       });
     },
 
