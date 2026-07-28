@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Adewumi Victor — Portfolio</title>
+<!-- PRELOAD IMAGE FOR FASTEST LOADING -->
+<link rel="preload" as="image" href="photo.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Inter','Segoe UI',sans-serif;background:#0d1b3e}
+
+/* ── CAROUSEL & TRACK ── */
+.carousel{width:100vw;height:100vh;overflow:hidden;position:relative}
+/* Sleek Out-Quart bezier for the main track slide */
+.track{display:flex;height:100%;transition:transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);will-change:transform}
+.slide{min-width:100vw;height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;}
+
+/* ── PROFESSIONAL INNER ANIMATIONS ── */
+/* Text staggered fade-up */
+.sc > * { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.slide.active .sc > * { opacity: 1; transform: translateY(0); }
+.slide .sc > *:nth-child(1) { transition-delay: 0.1s; }
+.slide .sc > *:nth-child(2) { transition-delay: 0.2s; }
+.slide .sc > *:nth-child(3) { transition-delay: 0.3s; }
+.slide .sc > *:nth-child(4) { transition-delay: 0.4s; }
+.slide .sc > *:nth-child(5) { transition-delay: 0.5s; }
+.slide .sc > *:nth-child(6) { transition-delay: 0.6s; }
+
+/* Image cinematic fade and zoom */
+.ph img { transform: scale(1.15) translateX(20px); opacity: 0; transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); display:block; width:100%; height:100%; object-fit:cover; object-position:center top; filter:grayscale(1) contrast(1.08); }
+.slide.active .ph img { transform: scale(1) translateX(0); opacity: 1; }
+
+/* Elements inside full-width slides (3 & 8) */
+.s3-top > *, .s3-body > *, .s5-top > *, .stats-g > *, .s5-quote { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.slide.active .s3-top > * { opacity: 1; transform: translateY(0); }
+.slide.active .s3-body > * { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.slide.active .s5-top > * { opacity: 1; transform: translateY(0); }
+.slide.active .stats-g > * { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.slide.active .s5-quote { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+/* ── PHOTO HALF ── */
+.ph{position:absolute;right:0;top:0;width:42%;height:100%;overflow:hidden;pointer-events:none}
+.ph::before{content:'';position:absolute;inset:0;z-index:1}
+.ph.dark::before{background:linear-gradient(90deg,#0d1b3e 0%,rgba(13,27,62,.4) 55%,transparent 100%)}
+.ph.light::before{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.4) 55%,transparent 100%)}
+
+/* ── SLIDE CONTENT ── */
+.sc{position:relative;z-index:2;padding:0 6% 80px 8%;width:62%;display:flex;flex-direction:column;justify-content:center;height:100%}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;color:#e8602a;text-transform:uppercase;margin-bottom:14px}
+
+/* GLOBAL REUSABLE TYPOGRAPHY FOR SLIDES */
+.dark-text h2 {font-size:clamp(28px,4vw,56px);font-weight:900;color:#0d1b3e;line-height:1.1;margin-bottom:18px}
+.dark-text p {font-size:clamp(13px,1.3vw,15px);color:#555;line-height:1.9;max-width:420px;margin-bottom:10px}
+.light-text h2 {font-size:clamp(28px,4vw,56px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:18px;letter-spacing:-1px}
+.light-text p {font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,.6);line-height:1.9;max-width:420px;margin-bottom:10px}
+h2 em{color:#e8602a;font-style:normal}
+
+/* ═══ FRONT PAGE ═══ */
+.s1{background:#0d1b3e}
+.s1 .small{font-size:clamp(13px,1.4vw,16px);color:rgba(255,255,255,.5);margin-bottom:6px}
+.s1 h1{font-size:clamp(44px,6.5vw,90px);font-weight:900;line-height:.98;color:#fff;letter-spacing:-2px}
+.s1 h1 em{color:#e8602a;font-style:normal}
+.s1 .sig{margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+.sig-name{font-size:clamp(22px,2.5vw,30px);color:#fff;font-weight:300;font-style:italic;line-height:1.2}
+.sig-name b{font-weight:900}
+.sig-bar{width:48px;height:3px;background:#e8602a;margin-top:10px;border-radius:2px}
+
+.front-features{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;max-width:90%}
+.ff-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);padding:7px 12px;border-radius:6px;font-size:11px;color:#fff;font-weight:600;letter-spacing:0.5px;}
+a.ff-item{text-decoration:none;background:rgba(232,96,42,0.15);border-color:rgba(232,96,42,0.4);color:#e8602a;transition:all 0.2s;}
+a.ff-item:hover{background:#e8602a;color:#fff;}
+
+.s1 .footer-bar{position:absolute;bottom:0;left:0;right:0;height:54px;background:#e8602a;z-index:3;display:flex;align-items:center;padding:0 8%;gap:16px}
+.s1 .footer-bar span{font-size:12px;font-weight:700;color:#fff;letter-spacing:1.5px;text-transform:uppercase}
+.sep{width:5px;height:5px;background:rgba(255,255,255,.45);border-radius:50%}
+
+/* ── TAGS & COMPONENTS ── */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tag{padding:7px 18px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.tn{background:#0d1b3e;color:#fff}
+.to{background:#e8602a;color:#fff}
+.tl{border:2px solid #0d1b3e;color:#0d1b3e}
+.tld{border:2px solid rgba(255,255,255,0.2);color:#fff}
+.cta-btn{background:#e8602a;border:none;border-radius:12px;padding:clamp(12px,2vh,17px) 24px;color:#fff;font-size:clamp(13px,1.3vw,15px);font-weight:800;letter-spacing:.5px;cursor:pointer;transition:transform .2s,opacity .2s;display:inline-block;text-decoration:none;text-align:center;margin-top:10px}
+.cta-btn:hover{transform:translateY(-2px);opacity:.9}
+
+/* ═══ SLIDES SPECIFICS ═══ */
+.s2{background:#fff}
+.s2 p.note{font-size:12px;color:#aaa;font-style:italic}
+.s2 .loc{margin-top:18px;font-size:13px;color:#bbb;display:flex;align-items:center;gap:6px}
+
+/* SLIDE 3 (Graphics - Full width) */
+.s3{background:#fff;flex-direction:column;align-items:stretch;justify-content:flex-start}
+.s3-top{background:#0d1b3e;padding:clamp(28px,5vh,56px) 8% clamp(20px,3vh,40px)}
+.s3-top h2{font-size:clamp(26px,3.5vw,46px);font-weight:900;color:#fff;line-height:1.05}
+.s3-top p{font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.55);margin-top:10px;max-width:480px;line-height:1.75}
+.s3-body{display:flex;flex:1;flex-direction:column;justify-content:center}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:clamp(16px,3vh,36px) 8%}
+.svc{background:#f7f7f7;border-radius:14px;padding:20px 16px;border-left:3px solid #e8602a;transition:transform .2s}
+.svc:hover{transform:translateY(-3px)}
+.svc-ic{font-size:24px;margin-bottom:10px;display:block}
+.svc h4{font-size:clamp(12px,1.1vw,14px);font-weight:800;color:#0d1b3e;margin-bottom:5px}
+.svc p{font-size:11px;color:#888;line-height:1.6}
+.s3-tools{padding:0 8% clamp(16px,3vh,30px);display:flex;gap:8px;flex-wrap:wrap}
+.tool{background:#0d1b3e;color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:6px;letter-spacing:.5px}
+
+/* DEDICATED SLIDES */
+.s4{background:#0d1b3e} /* Laptops */
+.s5{background:#fff}    /* Websites */
+.s6{background:#0d1b3e} /* Educore */
+.s7{background:#0d1b3e} /* IT Tech */
+
+/* SKILLS LIST (Used in Tech & Website Slides) */
+.skills{display:flex;flex-direction:column}
+.sk{padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:14px;align-items:flex-start}
+.sk.dark-border{border-bottom:1px solid rgba(0,0,0,.07);}
+.sk:last-child{border:none}
+.sk-dot{width:8px;height:8px;background:#e8602a;border-radius:50%;margin-top:5px;flex-shrink:0}
+.sk h4{font-size:clamp(12px,1.3vw,15px);font-weight:700;color:#fff;margin-bottom:4px}
+.sk.dark-border h4{color:#0d1b3e;}
+.sk p{font-size:clamp(11px,1vw,13px);color:rgba(255,255,255,.45);line-height:1.65}
+.sk.dark-border p{color:#666;}
+.certs{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+.cb{border:1px solid rgba(232,96,42,.6);color:#e8602a;background:rgba(232,96,42,.08);font-size:11px;font-weight:700;padding:5px 14px;border-radius:6px;letter-spacing:.5px}
+
+/* SLIDE 8 (Stats - Full width) */
+.s8{background:#fff;flex-direction:column;align-items:stretch;justify-content:flex-start}
+.s5-top{background:#e8602a;padding:clamp(28px,5vh,56px) 8% clamp(20px,3vh,40px);position:relative;overflow:hidden}
+.s5-top::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07)}
+.s5-top h2{font-size:clamp(26px,3.5vw,46px);font-weight:900;color:#fff;line-height:1.1}
+.s5-top p{font-size:13px;color:rgba(255,255,255,.8);margin-top:8px}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:clamp(20px,4vh,50px) 8%;flex:1}
+.stat{text-align:center;background:#f7f7f7;border-radius:16px;padding:clamp(20px,3.5vh,40px) 10px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.num{font-size:clamp(36px,5vw,64px);font-weight:900;color:#0d1b3e;line-height:1}
+.num sup{font-size:.52em;color:#e8602a;vertical-align:super;font-weight:900}
+.lbl{font-size:clamp(11px,.9vw,13px);color:#999;margin-top:8px;line-height:1.5}
+.s5-quote{padding:0 8% clamp(16px,2.5vh,28px);font-size:clamp(12px,1.1vw,14px);color:#888;font-style:italic;line-height:1.85;border-left:3px solid #e8602a;margin-left:8%;padding-left:16px}
+
+/* SLIDE 9 (Contact) */
+.s9{background:#0d1b3e}
+.ci-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.ci{display:flex;align-items:center;gap:12px;padding:12px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;transition:border-color .2s}
+.ci:hover{border-color:#e8602a}
+.ci-ic{font-size:17px}
+.ci span{font-size:clamp(12px,1.2vw,14px);color:#fff}
+
+/* ── GLOBAL 1-CLICK CONTACT FABs ── */
+.fab-container{position:fixed;right:24px;bottom:80px;z-index:500;display:flex;flex-direction:column;gap:10px}
+.fab{padding:12px 20px;border-radius:30px;font-size:13px;font-weight:800;color:#fff;text-decoration:none;box-shadow:0 6px 15px rgba(0,0,0,0.3);transition:transform 0.2s, opacity 0.2s;display:flex;align-items:center;justify-content:center;}
+.fab.wa{background:#25D366;}
+.fab.em{background:#e8602a;}
+.fab:hover{transform:translateY(-3px);}
+
+/* ── NAVIGATION ── */
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 8%;background:rgba(5,14,40,.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nbtn{width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;transition:all .2s}
+.nbtn.prev{background:rgba(255,255,255,.12);color:#fff}
+.nbtn.next{background:#e8602a;color:#fff}
+.dots{display:flex;gap:7px;align-items:center}
+.dot{width:7px;height:7px;border-radius:10px;background:rgba(255,255,255,.3);transition:all .3s;cursor:pointer;border:none;padding:0}
+.dot.on{width:22px;background:#e8602a}
+
+/* ── PROGRESS BAR ── */
+.prog{position:fixed;top:0;left:0;height:3px;background:#e8602a;transition:width .55s cubic-bezier(.4,0,.2,1);z-index:300}
+</style>
+</head>
+<body>
+
+<div class="prog" id="prog"></div>
+
+<!-- 1-CLICK GLOBAL CONTACT -->
+<div class="fab-container">
+  <a href="https://wa.me/2348103402263" target="_blank" class="fab wa">💬 WhatsApp</a>
+  <a href="mailto:adevictoraiden@gmail.com" class="fab em">✉️ Email</a>
+</div>
+
+<div class="carousel">
+<div class="track" id="track">
+
+  <!-- ══ SLIDE 1: INTRO ══ -->
+  <div class="slide s1">
+    <div class="sc">
+      <div class="eyebrow">Portfolio · 2026</div>
+      <p class="small">I don't think I've done this so,</p>
+      <h1>Let me<br><em>Introduce</em><br>Myself</h1>
+      <div class="sig">
+        <div class="sig-name">Adewumi<br><b>Victor</b></div>
+        <div class="sig-bar"></div>
+      </div>
+      <div class="front-features">
+        <span class="ff-item">💻 Laptops (New & UK Used)</span>
+        <span class="ff-item">🌐 Websites (Full & Subdomain)</span>
+        <a href="https://educore.is-great.org/" target="_blank" class="ff-item link">🚀 Educore SAAS Platform</a>
+      </div>
+    </div>
+    <div class="ph dark">
+      <img src="photo.jpg" alt="Adewumi Victor" fetchpriority="high" decoding="async">
+    </div>
+    <div class="footer-bar">
+      <span>Technical &amp; Creative Professional</span>
+      <div class="sep"></div>
+      <span>Lagos, Nigeria</span>
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 2: ABOUT ══ -->
+  <div class="slide s2">
+    <div class="sc dark-text">
+      <div class="eyebrow">About Me</div>
+      <h2>My name is<br>Adewumi Victor.</h2>
+      <p>I am a versatile <strong>Technical &amp; Creative Professional</strong> with over 9 years of combined experience.</p>
+      <p>I bridge the gap between enterprise IT, cloud solutions, and powerful visual design — all under one roof.</p>
+      <p class="note">(Yes, I wear many hats — and I'm proud of every one.)</p>
+      <div class="tags">
+        <span class="tag tn">IT Systems</span>
+        <span class="tag to">Cloud</span>
+        <span class="tag tl">Graphic Design</span>
+        <span class="tag tn">Instructor</span>
+      </div>
+      <p class="loc">📍 Lagos, Nigeria</p>
+    </div>
+    <div class="ph light">
+      <img src="photo.jpg" alt="Adewumi Victor" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 3: GRAPHICS & GENERAL (Full Width) ══ -->
+  <div class="slide s3">
+    <div class="s3-top">
+      <h2>I am a <em>Graphics Designer</em></h2>
+      <p>Helping brands communicate clearly and confidently through intentional, strategy-led visuals — not just aesthetically pleasing designs, but ones that convert.</p>
+    </div>
+    <div class="s3-body">
+      <div class="svc-grid">
+        <div class="svc"><span class="svc-ic">🎨</span><h4>Graphix</h4><p>Logos, fliers, banner, visual systems &amp; corporate profiles</p></div>
+        <div class="svc"><span class="svc-ic">📱</span><h4>Social Media</h4><p>Campaigns, posts &amp; digital marketing</p></div>
+        <div class="svc"><span class="svc-ic">🖨💻</span><h4>Software Installation</h4><p>Install software (Microsoft, Photoshop, etc.), update/backup PC, fix issues.</p></div>
+      </div>
+      <div class="s3-tools">
+        <span class="tool">CorelDRAW Advanced</span>
+        <span class="tool">Adobe Photoshop</span>
+        <span class="tool">ISC Certified</span>
+        <span class="tool">200+ Projects</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 4: LAPTOPS (Dedicated) ══ -->
+  <div class="slide s4">
+    <div class="sc light-text">
+      <div class="eyebrow">Hardware Solutions</div>
+      <h2>Premium Laptops<br><em>New &amp; UK Used.</em></h2>
+      <p>I am selling laptops. Providing high-performance, durable, and affordable computing machines tailored for individuals, students, and enterprise environments.</p>
+      <div class="tags">
+        <span class="tag tn">Brand New</span>
+        <span class="tag to">Pristine UK Used</span>
+        <span class="tag tld">Mac &amp; PC</span>
+        <span class="tag tn">Guaranteed</span>
+      </div>
+    </div>
+    <div class="ph dark">
+      <img src="photo.jpg" alt="Laptops" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 5: WEBSITES (Dedicated) ══ -->
+  <div class="slide s5">
+    <div class="sc dark-text">
+      <div class="eyebrow">Web Development</div>
+      <h2>I Build Websites<br><em>Full &amp; Subdomains.</em></h2>
+      <p>Crafting professional, secure, and highly responsive websites. I build digital experiences that elevate your brand and engage your audience.</p>
+      <div class="skills" style="margin-top:15px">
+        <div class="sk dark-border"><div class="sk-dot"></div><div><h4>Full Domain Architecture</h4><p>End-to-end domain registration, hosting setup, custom development, and SSL security.</p></div></div>
+        <div class="sk dark-border"><div class="sk-dot"></div><div><h4>Subdomain Platforms</h4><p>Targeted staging, blogs, and isolated functional environments built right under your main brand.</p></div></div>
+      </div>
+    </div>
+    <div class="ph light">
+      <img src="photo.jpg" alt="Websites" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 6: EDUCORE SAAS (Dedicated) ══ -->
+  <div class="slide s6">
+    <div class="sc light-text">
+      <div class="eyebrow">SAAS Product</div>
+      <h2>Educore<br><em>Platform.</em></h2>
+      <p>I have built and currently manage a comprehensive Software-as-a-Service (SAAS) platform designed to streamline and revolutionize educational management.</p>
+      <p>Seamless, secure, and infinitely scalable.</p>
+      <a href="https://educore.is-great.org/" target="_blank" class="cta-btn">Visit Educore Now</a>
+    </div>
+    <div class="ph dark">
+      <img src="photo.jpg" alt="Educore SAAS" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 7: TECH / IT INFRASTRUCTURE ══ -->
+  <div class="slide s7">
+    <div class="sc light-text">
+      <div class="eyebrow">What I Also Do</div>
+      <h2>Tech is my<br><em>other language</em></h2>
+      <div class="skills">
+        <div class="sk"><div class="sk-dot"></div><div><h4>IT Infrastructure &amp; Security</h4><p>FortiGate Firewall/VPN, Active Directory &amp; IAM, Windows &amp; Linux admin, network security &amp; remote access.</p></div></div>
+        <div class="sk"><div class="sk-dot"></div><div><h4>Cloud &amp; Automation</h4><p>AWS (EC2, IAM, website deployments), n8n &amp; Zapier workflows, API-based integrations at enterprise scale.</p></div></div>
+        <div class="sk"><div class="sk-dot"></div><div><h4>Training &amp; Instruction</h4><p>Structured curriculum design, project-based learning, live &amp; remote classroom delivery for 300+ students.</p></div></div>
+      </div>
+      <div class="certs">
+        <span class="cb">Fortinet NSE 1</span>
+        <span class="cb">Fortinet NSE 2</span>
+        <span class="cb">ISC Design</span>
+      </div>
+    </div>
+    <div class="ph dark">
+      <img src="photo.jpg" alt="IT Infrastructure" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ══ SLIDE 8: NUMBERS (Full Width) ══ -->
+  <div class="slide s8">
+    <div class="s5-top">
+      <h2>Numbers That Speak for Me</h2>
+      <p>Real results. Real impact. Real experience.</p>
+    </div>
+    <div class="stats-g">
+      <div class="stat"><div class="num">9<sup>+</sup></div><div class="lbl">Years of<br>Experience</div></div>
+      <div class="stat"><div class="num">300<sup>+</sup></div><div class="lbl">Students<br>Trained</div></div>
+      <div class="stat"><div class="num">20<sup>+</sup></div><div class="lbl">SMB Clients<br>Served</div></div>
+      <div class="stat"><div class="num">10<sup>+</sup></div><div class="lbl">Skills<br>Mastered</div></div>
+    </div>
+    <div class="s5-quote">"Renowned for translating complex technical concepts into practical, project-based outcomes — trained across both physical and online sessions."</div>
+  </div>
+
+  <!-- ══ SLIDE 9: CONTACT ══ -->
+  <div class="slide s9">
+    <div class="sc light-text">
+      <div class="eyebrow">Let's Work Together</div>
+      <h2>Your Brand &amp; Tech<br>Deserves <em>More!</em></h2>
+      <p>More than just another professional — someone who bridges creativity and technology to deliver real, lasting results for your business or brand.</p>
+      <div class="ci-list">
+        <div class="ci"><span class="ci-ic">✉️</span><span>adevictoraiden@gmail.com</span></div>
+        <div class="ci"><span class="ci-ic">📞</span><span>+234 810 340 2263</span></div>
+        <div class="ci"><span class="ci-ic">📍</span><span>Lagos, Nigeria</span></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://wa.me/2348103402263" target="_blank" class="cta-btn" style="background:#25D366">Message via WhatsApp</a>
+        <a href="mailto:adevictoraiden@gmail.com" class="cta-btn">Send an Email</a>
+      </div>
+    </div>
+    <div class="ph dark">
+      <img src="photo.jpg" alt="Contact Victor" loading="lazy">
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── NAV ── -->
+<div class="nav">
+  <button class="nbtn prev" id="prevBtn" onclick="go(-1)">&#8592;</button>
+  <div class="dots" id="dots"></div>
+  <button class="nbtn next" id="nextBtn" onclick="go(1)">&#8594;</button>
+</div>
+
+<script>
+const N = 9; // Updated Slide count
+let cur = 0, sx = 0;
+const track = document.getElementById('track');
+const dotsEl = document.getElementById('dots');
+const prog = document.getElementById('prog');
+const slides = document.querySelectorAll('.slide');
+
+const W = () => document.querySelector('.slide').offsetWidth;
+
+// Create Navigation Dots
+for(let i=0; i<N; i++){
+  const d = document.createElement('button');
+  d.className = 'dot' + (i === 0 ? ' on' : '');
+  d.setAttribute('aria-label', 'Slide ' + (i+1));
+  d.onclick = () => { 
+    handleUserInteraction(); 
+    cur = i; 
+    render(); 
+  };
+  dotsEl.appendChild(d);
+}
+
+function render(){
+  // Move track
+  track.style.transform = `translateX(-${cur * W()}px)`;
+  
+  // Update Dots
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+  
+  // Professional Animation: Toggle Active Class
+  slides.forEach((s, i) => {
+    if(i === cur) {
+        s.classList.add('active');
+    } else {
+        s.classList.remove('active');
+    }
+  });
+
+  // Progress Bar
+  prog.style.width = ((cur / (N - 1)) * 100) + '%';
+}
+
+// Slider Function
+function go(d, isAuto = false){
+  if(!isAuto) handleUserInteraction();
+  
+  cur = cur + d;
+  
+  // Infinite Loop
+  if(cur >= N) cur = 0; 
+  if(cur < 0) cur = N - 1;
+
+  render();
+}
+
+// ---- SMART AUTO-PLAY LOGIC ----
+let autoPlayInterval;
+let idleTimeout;
+
+function startAutoPlay() {
+  clearInterval(autoPlayInterval);
+  autoPlayInterval = setInterval(() => { 
+    go(1, true); 
+  }, 5000); // 5 Seconds to switch
+}
+
+function handleUserInteraction() {
+  // Stop auto-sliding immediately upon interaction
+  clearInterval(autoPlayInterval);
+  
+  // Reset Idle Timer: If user does nothing for 6 seconds, resume Auto-Play
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(() => {
+    startAutoPlay();
+  }, 6000);
+}
+
+// Listen for user interactions (mouse move, click, touch, scroll)
+['touchstart', 'mousemove', 'click', 'keydown', 'wheel'].forEach(evt => {
+  document.addEventListener(evt, handleUserInteraction, {passive: true});
+});
+
+// Start initially
+startAutoPlay();
+
+// Window Resize & Keyboard Logic
+window.addEventListener('resize', render);
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowRight') go(1);
+  if(e.key === 'ArrowLeft') go(-1);
+});
+
+// Swipe Logic
+document.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive: true});
+document.addEventListener('touchend', e => {
+  const dx = sx - e.changedTouches[0].clientX;
+  if(Math.abs(dx) > 50) go(dx > 0 ? 1 : -1);
+}, {passive: true});
+
+// Initial Render
+render();
+</script>
+</body>
+</html>
