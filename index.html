@@ -1533,7 +1533,7 @@ Key products:
 - ComputerSlate Business: POS, inventory, sales reports. Business Pro at ₦30k/month.
 - ComputerSlate Office: HR tools, task tracking, asset management. Office Pro at ₦20k/month.
 - Gridzo AI: AI assistant built into the platform.
-- Training portal: https://training-portal.adevictoraiden.workers.dev
+- Training portal: https://training.computerslate.com.ng
 - Creator: Victor Adewumi — profile.html
 
 Navigation commands you can suggest (use exactly):
@@ -1543,7 +1543,7 @@ Navigation commands you can suggest (use exactly):
 - [NAV:office] — Go to Offices section
 - [OPEN:https://school.computerslate.com.ng/auth] — Register a school
 - [OPEN:https://school.computerslate.com.ng] — Login to school portal
-- [OPEN:https://training-portal.adevictoraiden.workers.dev] — Open Training portal
+- [OPEN:https://training.computerslate.com.ng] — Open Training portal
 
 Keep replies concise (2-4 sentences max), warm, and action-oriented. Always offer a next step.
 If unsure, offer to connect them with support at adevictoraiden@gmail.com.`;
@@ -1572,7 +1572,7 @@ function appendMsg(text, role) {
   text = text.replace(/\[NAV:([\w]+)\]/g, (_, route) => {
     return `<a onclick="CSAgent.navigate('${route}');return false;"># Go to ${route.charAt(0).toUpperCase()+route.slice(1)}</a>`;
   }).replace(/\[OPEN:(https?:\/\/[^\]]+)\]/g, (_, url) => {
-    return `<a onclick="window.open('${url}','_blank','noopener');return false;">↗ ${url.replace(/https?:\/\//, '')}</a>`;
+    return `<a href="${url}" onclick="window.location.href='${url}';return false;">↗ ${url.replace(/https?:\/\//, '')}</a>`;
   });
   el.innerHTML = text;
   messages.appendChild(el);
