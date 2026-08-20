@@ -346,8 +346,8 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 
   nav { padding: 0 var(--space-2); }
   .nav-brand { font-size: 17px; }
-  .nav-domains { margin: 0 var(--space-1); }
-  .nav-btn { padding: 8px 12px; font-size: 13px; }
+  .nav-domains { margin: 0 var(--space-1); overflow-x: visible; mask-image: none; gap: 2px; padding: 2px; }
+  .nav-btn { padding: 6px 2px; font-size: 10px; letter-spacing: 0; flex: 1 1 0; text-align: center; overflow: hidden; text-overflow: ellipsis; }
   .cmd-trigger span { display: none; }
   .cmd-trigger .cmd-key { display: none; }
   .cmd-trigger { padding: 8px 10px; }
@@ -395,6 +395,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 }
 
 @media (max-width: 480px) {
+  .nav-btn { padding: 6px 1px; font-size: 9px; }
   .security-grid { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; }
@@ -454,7 +455,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
     <button class="nav-btn" data-target="school" onclick="App.Router.navigate('school')">Schools</button>
     <button class="nav-btn" data-target="business" onclick="App.Router.navigate('business')">Businesses</button>
     <button class="nav-btn" data-target="office" onclick="App.Router.navigate('office')">Offices</button>
-    <button class="nav-btn" data-target="training" onclick="App.Redirects.go('training')">Training</button>
+    <button class="nav-btn" data-target="training" onclick="window.open('https://training-portal.adevictoraiden.workers.dev','_blank','noopener')">Training</button>
   </div>
 
   <div class="flex items-center gap-2">
@@ -489,7 +490,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
         <p class="subtitle" style="color: rgba(255,255,255,0.8);">Manage your School, Business, Office, or Training Centre from a single intelligent platform. Track students, staff, inventory, payments, reports, and daily operations — all in one place.</p>
         
         <div class="hero-ctas">
-          <button class="btn btn-primary" onclick="App.UI.Modals.open('authModal')"><i class="fas fa-play"></i> Start for Free</button>
+          <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')"><i class="fas fa-play"></i> Register School</button>
           <button class="btn btn-outline-light" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-calendar"></i> Book a Demo</button>
           <button class="btn btn-outline-light" onclick="App.UI.scrollToVideo()"><i class="fas fa-video"></i> Watch Video</button>
         </div>
@@ -782,7 +783,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
       <h2 class="title-lg">Ready to streamline your operations?</h2>
       <p class="text-muted">Join 50+ Nigerian schools and businesses already using ComputerSlate. Start free today — no credit card required.</p>
       <div class="flex justify-center gap-3" style="flex-wrap: wrap;">
-        <button class="btn btn-primary" onclick="App.UI.Modals.open('authModal')"><i class="fas fa-rocket"></i> Start for Free</button>
+        <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')"><i class="fas fa-rocket"></i> Register School</button>
         <button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-envelope"></i> Contact Sales</button>
       </div>
       <div class="hero-trust" style="justify-content: center; margin-top: var(--space-4);">
@@ -819,14 +820,12 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
     </div>
 
     <div class="glass-solid elevation-2" style="max-width: 600px; margin: 0 auto var(--space-8); padding: var(--space-4); border-radius: var(--radius-lg); text-align: left;">
-      <h3 class="title-md" style="font-size: 16px;">Access your school portal</h3>
-      <div style="position: relative; margin-top: var(--space-2);">
-        <i class="fas fa-search" style="position: absolute; left: 16px; top: 16px; color: rgb(var(--rgb-muted));"></i>
-        <input type="text" id="schoolSearch" class="form-input" style="padding-left: 44px;" placeholder="Search for your school..." oninput="App.UI.filterSchools(this.value)">
-        <div id="schoolDropdown" class="glass-solid elevation-2" style="display:none; position: absolute; top: 100%; left: 0; right: 0; border-radius: var(--radius-sm); margin-top: 8px; max-height: 200px; overflow-y: auto; z-index: 10;">
-        </div>
+      <div class="flex gap-2" style="flex-wrap: wrap;">
+        <button class="btn btn-primary" style="flex: 1 1 200px;" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')"><i class="fas fa-right-to-bracket"></i> Login to Your School</button>
+        <button class="btn btn-outline" style="flex: 1 1 200px;" onclick="window.open('https://school.computerslate.com.ng','_blank','noopener')"><i class="fas fa-building-circle-check"></i> Sign Up / Register New School</button>
       </div>
     </div>
+
 
     <div class="section-pad" style="padding-top: 0;">
       <div class="badge"><i class="fas fa-desktop"></i> See It In Action</div>
@@ -1113,7 +1112,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
     
     <div class="flex justify-center gap-3" style="flex-wrap: wrap; margin-bottom: var(--space-3); font-size: 14px; color: rgb(var(--rgb-muted));">
       <a onclick="App.Router.navigate('home')">Home</a>
-      <a onclick="App.Redirects.go('training')">Academy</a>
+      <a onclick="window.open('https://training-portal.adevictoraiden.workers.dev','_blank','noopener')">Academy</a>
       <a onclick="App.UI.showToast('Privacy Policy coming soon', 'info')">Privacy Policy</a>
       <a onclick="App.UI.Modals.open('salesModal')">Contact Us</a>
       <a href="#" data-redirect="gridzo" class="text-gold">Gridzo AI</a>
@@ -1184,11 +1183,14 @@ const MOCK_SCHOOLS = [
 const App = {
   Redirects: {
     data: {"links":{"training":"https://training-portal.adevictoraiden.workers.dev","contact_email":"mailto:adevictoraiden@gmail.com","telegram":"https://t.me/","gridzo":"https://script.google.com/macros/s/AKfycbwRN4S92Eh9tJUuy0b1zw4ICE8Myjaqm_jTvF2LauRlvP21gJMFl9Yh8Zh1Ke4nrSiqLg/exec","creator":"https://victoradewumi.com","school_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Starter","school_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Pro","school_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20School%20Enterprise","business_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Starter","business_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Pro","business_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Business%20Enterprise","office_starter":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Starter","office_pro":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Pro","office_enterprise":"mailto:adevictoraiden@gmail.com?subject=ComputerSlate%20Office%20Enterprise"},"pricing":{"school":[{"name":"Starter","price":"₦0","note":"Free forever • Up to 50 students","features":["Digital registration","Fee tracking","Daily attendance","Email support"],"action":"Start Free","link":"school_starter"},{"name":"School Pro","price":"₦25k","note":"Per term • Unlimited students","features":["Everything in Starter","Telegram alerts","AI tools","Priority support"],"action":"Choose School Pro","link":"school_pro"},{"name":"Enterprise","price":"Custom","note":"For multi-campus schools","features":["Multi-campus dashboard","Custom branding","Dedicated onboarding"],"action":"Contact Sales","link":"school_enterprise"}],"business":[{"name":"Starter","price":"₦0","note":"Free forever • One location","features":["Inventory basics","Sales records","Daily reports","Email support"],"action":"Start Free","link":"business_starter"},{"name":"Business Pro","price":"₦30k","note":"Per month • Unlimited products","features":["POS and inventory","Telegram alerts","AI insights","Priority support"],"action":"Choose Business Pro","link":"business_pro"},{"name":"Enterprise","price":"Custom","note":"For multiple locations","features":["Multi-location dashboard","API access","Custom integrations"],"action":"Contact Sales","link":"business_enterprise"}],"office":[{"name":"Starter","price":"₦0","note":"Free forever • Small teams","features":["Team directory","Task tracking","Basic reports","Email support"],"action":"Start Free","link":"office_starter"},{"name":"Office Pro","price":"₦20k","note":"Per month • Unlimited staff","features":["HR tools","Asset management","Telegram alerts","Priority support"],"action":"Choose Office Pro","link":"office_pro"},{"name":"Enterprise","price":"Custom","note":"For larger organizations","features":["Advanced permissions","Custom workflows","Dedicated manager"],"action":"Contact Sales","link":"office_enterprise"}]}},
-    async init() {
-      try { const loaded = await fetch('redirects.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null); if (loaded && loaded.links && loaded.pricing) this.data = loaded; } catch (_) { /* Local file mode uses the embedded fallback above. */ }
+    init() {
       document.querySelectorAll('[data-redirect]').forEach(el => el.addEventListener('click', event => { event.preventDefault(); this.go(el.dataset.redirect); }));
     },
-    go(key) { const url = this.data.links && this.data.links[key]; if (url) window.open(url, url.startsWith('mailto:') ? '_self' : '_blank', 'noopener'); else App.UI.showToast('Set the ' + key + ' link in redirects.json.', 'info'); },
+    go(key) {
+      if (key.startsWith('school_')) { window.open('https://school.computerslate.com.ng/auth','_blank','noopener'); return; }
+      const url = this.data.links && this.data.links[key];
+      if (url) window.open(url, url.startsWith('mailto:') ? '_self' : '_blank', 'noopener');
+    },
     salesMail(form) { const email = (this.data.links && this.data.links.contact_email) || 'mailto:adevictoraiden@gmail.com'; const subject = encodeURIComponent('ComputerSlate sales request'); const body = encodeURIComponent('Organization: ' + form.elements.organization.value + '\nEmail: ' + form.elements.email.value + '\nPhone: ' + form.elements.phone.value); window.location.href = email + (email.includes('?') ? '&' : '?') + 'subject=' + subject + '&body=' + body; }
   },
   Pricing: {
@@ -1409,18 +1411,13 @@ const App = {
       document.getElementById('schoolSearch').value = name;
       document.getElementById('schoolDropdown').style.display = 'none';
       this.showToast(`Selected ${name}`, 'success');
-      setTimeout(() => this.Modals.open('authModal'), 500);
+      window.open('https://school.computerslate.com.ng', '_blank', 'noopener');
     }
   },
 
   API: {
     submitSalesForm(e) { e.preventDefault(); App.Redirects.salesMail(e.target); App.UI.Modals.close('salesModal'); e.target.reset(); },
-    mockLogin(e) {
-      e.preventDefault();
-      App.UI.Modals.close('authModal');
-      App.UI.showToast("Login simulation successful. Redirecting to Dashboard...", "success");
-      e.target.reset();
-    },
+    mockLogin(e) { e.preventDefault(); window.open('https://school.computerslate.com.ng/auth','_blank','noopener'); },
     subscribeNewsletter(e) {
       e.preventDefault();
       App.UI.showToast("Subscribed successfully! Check your inbox.", "success");
@@ -1428,8 +1425,8 @@ const App = {
     }
   },
 
-  async start() {
-    await this.Redirects.init();
+  start() {
+    this.Redirects.init();
     this.Theme.init(); this.UI.init(); this.Pricing.render('school'); this.Router.init();
     document.querySelectorAll('img').forEach(img => { if (!img.closest('a') && !img.classList.contains('partner-logo')) { img.classList.add('zoomable'); img.addEventListener('click', () => App.UI.openImage(img)); } });
   }
@@ -1438,5 +1435,244 @@ const App = {
 document.addEventListener('DOMContentLoaded', () => App.start());
 document.addEventListener('keydown', event => { if (event.key === 'Escape') App.UI.closeImage(); });
 </script>
+
+<!-- ── AI CUSTOMER AGENT ──────────────────────────────────── -->
+<div id="cs-agent-bubble" onclick="CSAgent.open()" title="Chat with Slate AI">
+  <i class="fas fa-robot"></i>
+  <span id="cs-agent-badge"></span>
+</div>
+
+<div id="cs-agent-panel">
+  <div id="cs-agent-header">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div id="cs-agent-avatar"><i class="fas fa-robot"></i></div>
+      <div>
+        <div style="font-weight:700;font-size:15px;">Slate AI</div>
+        <div style="font-size:11px;opacity:.75;">ComputerSlate Assistant • Online</div>
+      </div>
+    </div>
+    <button onclick="CSAgent.close()" style="background:none;border:none;color:inherit;cursor:pointer;font-size:18px;opacity:.7;"><i class="fas fa-times"></i></button>
+  </div>
+  <div id="cs-agent-messages"></div>
+  <div id="cs-agent-input-row">
+    <input id="cs-agent-input" type="text" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter')CSAgent.send()">
+    <button onclick="CSAgent.send()"><i class="fas fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<style>
+#cs-agent-bubble {
+  position:fixed;bottom:28px;right:28px;z-index:9000;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--c-gold);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(42,92,224,.45);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;
+}
+#cs-agent-bubble:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(42,92,224,.6);}
+#cs-agent-badge {
+  position:absolute;top:0;right:0;width:12px;height:12px;
+  background:#16A34A;border-radius:50%;border:2px solid #fff;
+}
+#cs-agent-panel {
+  position:fixed;bottom:96px;right:28px;z-index:9001;
+  width:360px;max-width:calc(100vw - 40px);
+  background:rgb(var(--rgb-surface));border:1px solid rgba(var(--rgb-border),.15);
+  border-radius:16px;box-shadow:0 24px 60px rgba(10,31,68,.2);
+  display:flex;flex-direction:column;
+  transform:translateY(20px) scale(.95);opacity:0;pointer-events:none;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .35s;
+  overflow:hidden;
+}
+#cs-agent-panel.open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
+#cs-agent-header{
+  background:var(--c-gold);color:#fff;
+  padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+}
+#cs-agent-avatar{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+#cs-agent-messages{
+  flex:1;overflow-y:auto;padding:16px;
+  display:flex;flex-direction:column;gap:10px;
+  min-height:260px;max-height:380px;
+  scrollbar-width:thin;
+}
+.cs-msg{max-width:86%;padding:10px 13px;border-radius:12px;font-size:13.5px;line-height:1.5;word-break:break-word;}
+.cs-msg.bot{background:rgba(var(--rgb-border),.07);align-self:flex-start;border-bottom-left-radius:3px;}
+.cs-msg.user{background:var(--c-gold);color:#fff;align-self:flex-end;border-bottom-right-radius:3px;}
+.cs-msg.typing{opacity:.6;}
+.cs-msg a{color:var(--c-gold);text-decoration:underline;cursor:pointer;}
+.cs-msg.bot a{color:var(--c-gold);}
+.cs-msg.user a{color:#fff;}
+#cs-agent-input-row{
+  display:flex;gap:8px;padding:12px;
+  border-top:1px solid rgba(var(--rgb-border),.1);
+}
+#cs-agent-input{
+  flex:1;padding:10px 14px;border-radius:8px;font-size:13px;
+  background:rgba(var(--rgb-border),.06);border:1px solid rgba(var(--rgb-border),.15);
+  color:rgb(var(--rgb-text));font-family:var(--font-body);outline:none;
+}
+#cs-agent-input:focus{border-color:var(--c-gold);}
+#cs-agent-input-row button{
+  width:38px;height:38px;border-radius:8px;border:none;cursor:pointer;
+  background:var(--c-gold);color:#fff;font-size:14px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:background .2s;
+}
+#cs-agent-input-row button:hover{background:#1E46B8;}
+</style>
+
+<script>
+(function(){
+const SYSTEM_PROMPT = `You are Slate AI, a helpful and friendly customer assistant for ComputerSlate — a Nigerian SaaS platform that manages Schools, Businesses, and Offices.
+Key products:
+- ComputerSlate School: student registration, fee tracking, attendance, report cards, exam results. Free starter (up to 50 students). School Pro at ₦25k/term. Register at https://school.computerslate.com.ng/auth
+- ComputerSlate Business: POS, inventory, sales reports. Business Pro at ₦30k/month.
+- ComputerSlate Office: HR tools, task tracking, asset management. Office Pro at ₦20k/month.
+- Gridzo AI: AI assistant built into the platform.
+- Training portal: https://training-portal.adevictoraiden.workers.dev
+- Creator: Victor Adewumi — profile.html
+
+Navigation commands you can suggest (use exactly):
+- [NAV:home] — Go to Home
+- [NAV:school] — Go to Schools section
+- [NAV:business] — Go to Businesses section
+- [NAV:office] — Go to Offices section
+- [OPEN:https://school.computerslate.com.ng/auth] — Register a school
+- [OPEN:https://school.computerslate.com.ng] — Login to school portal
+- [OPEN:https://training-portal.adevictoraiden.workers.dev] — Open Training portal
+
+Keep replies concise (2-4 sentences max), warm, and action-oriented. Always offer a next step.
+If unsure, offer to connect them with support at adevictoraiden@gmail.com.`;
+
+const SUGGESTIONS = [
+  "👋 Hi! I'm Slate AI. Want to know how ComputerSlate can help your school manage fees and results?",
+  "💡 Did you know you can start managing your school for free? Up to 50 students — no credit card needed!",
+  "🏫 Are you a school administrator? I can walk you through registering on ComputerSlate in under 2 minutes.",
+  "📊 Need to track student fees and send results to parents digitally? ComputerSlate makes it seamless.",
+  "🚀 ComputerSlate Business lets you run POS, track inventory, and get daily reports — starting free!",
+];
+
+let history = [];
+let suggestionIdx = 0;
+let firstOpen = true;
+let sugTimer;
+
+const panel = document.getElementById('cs-agent-panel');
+const messages = document.getElementById('cs-agent-messages');
+const input = document.getElementById('cs-agent-input');
+
+function appendMsg(text, role) {
+  const el = document.createElement('div');
+  el.className = `cs-msg ${role}`;
+  // Parse navigation commands
+  text = text.replace(/\[NAV:([\w]+)\]/g, (_, route) => {
+    return `<a onclick="CSAgent.navigate('${route}');return false;"># Go to ${route.charAt(0).toUpperCase()+route.slice(1)}</a>`;
+  }).replace(/\[OPEN:(https?:\/\/[^\]]+)\]/g, (_, url) => {
+    return `<a onclick="window.open('${url}','_blank','noopener');return false;">↗ ${url.replace(/https?:\/\//, '')}</a>`;
+  });
+  el.innerHTML = text;
+  messages.appendChild(el);
+  messages.scrollTop = messages.scrollHeight;
+  return el;
+}
+
+function appendTyping() {
+  const el = document.createElement('div');
+  el.className = 'cs-msg bot typing';
+  el.textContent = '…';
+  messages.appendChild(el);
+  messages.scrollTop = messages.scrollHeight;
+  return el;
+}
+
+// This calls a backend proxy (a Cloudflare Worker) that holds the AI
+// provider's API key server-side. No provider name or key is ever
+// present in this file or sent to the browser.
+const AI_PROXY_URL = 'https://ai-proxy.adevictoraiden.workers.dev/chat';
+
+async function callClaude(userMsg) {
+  history.push({ role: 'user', content: userMsg });
+  const typing = appendTyping();
+  try {
+    const res = await fetch(AI_PROXY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        system: SYSTEM_PROMPT,
+        messages: history
+      })
+    });
+    const data = await res.json();
+    const reply = data.reply || "Sorry, I couldn't get a response. Please try again.";
+    history.push({ role: 'assistant', content: reply });
+    typing.remove();
+    appendMsg(reply, 'bot');
+  } catch(e) {
+    typing.remove();
+    appendMsg("Oops! I'm having connection issues. You can reach us at adevictoraiden@gmail.com", 'bot');
+  }
+}
+
+window.CSAgent = {
+  open() {
+    panel.classList.add('open');
+    clearTimeout(sugTimer);
+    if (firstOpen) {
+      firstOpen = false;
+      appendMsg(SUGGESTIONS[suggestionIdx % SUGGESTIONS.length], 'bot');
+    }
+    setTimeout(() => input.focus(), 200);
+  },
+  close() {
+    panel.classList.remove('open');
+    // Schedule next suggestion in 15s
+    clearTimeout(sugTimer);
+    sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
+  },
+  suggest() {
+    if (panel.classList.contains('open')) { sugTimer = setTimeout(() => CSAgent.suggest(), 15000); return; }
+    suggestionIdx++;
+    // Show badge
+    document.getElementById('cs-agent-badge').style.animation = 'none';
+    document.getElementById('cs-agent-badge').offsetHeight;
+    // Pulse bubble
+    const bubble = document.getElementById('cs-agent-bubble');
+    bubble.style.boxShadow = '0 0 0 0 rgba(42,92,224,.6)';
+    bubble.animate([
+      {boxShadow:'0 4px 20px rgba(42,92,224,.45)'},
+      {boxShadow:'0 0 0 12px rgba(42,92,224,0)'}
+    ], {duration:600, iterations:2});
+    // Pre-append suggestion so user sees it on open
+    if (!panel.classList.contains('open')) {
+      firstOpen = false;
+      // Clear old messages and add fresh suggestion
+      messages.innerHTML = '';
+      history = [];
+      appendMsg(SUGGESTIONS[suggestionIdx % SUGGESTIONS.length], 'bot');
+    }
+    sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
+  },
+  send() {
+    const text = input.value.trim();
+    if (!text) return;
+    appendMsg(text, 'user');
+    input.value = '';
+    callClaude(text);
+  },
+  navigate(route) {
+    if (window.App && App.Router) App.Router.navigate(route);
+    CSAgent.close();
+  }
+};
+
+// Auto-suggest after 15 seconds
+sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
+})();
+</script>
+
 </body>
 </html>
