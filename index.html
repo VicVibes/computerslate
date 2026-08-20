@@ -1589,24 +1589,58 @@ function appendTyping() {
   return el;
 }
 
-// This calls a backend proxy (a Cloudflare Worker) that holds the AI
-// provider's API key server-side. No provider name or key is ever
-// present in this file or sent to the browser.
 const AI_PROXY_URL = 'https://ai-proxy.byteforge11-516.workers.dev/';
+const PROXY_TOKEN = 'SlateAppSecret2026'; // This MUST match the PROXY_SECRET you added in Cloudflare
 
+// 1. Check if the AI is active and securely connected
+async function checkAIStatus() {
+  const badge = document.getElementById('cs-agent-badge');
+  if (badge) badge.style.background = '#64708C'; // Starts Grey (checking connection)
+
+  try {
+    const res = await fetch(AI_PROXY_URL, {
+      method: 'GET',
+      headers: { 'X-Slate-Token': PROXY_TOKEN }
+    });
+    const data = await res.json();
+    
+    if (data.status === 'active') {
+       console.log("AI is securely connected and ready!");
+       if (badge) badge.style.background = '#16A34A'; // Turns Green (Active!)
+    } else {
+       if (badge) badge.style.background = '#DC2626'; // Turns Red (API Key Missing)
+    }
+  } catch (e) {
+    console.error("AI proxy is offline or rejecting access.");
+    if (badge) badge.style.background = '#DC2626'; // Turns Red (Offline/Blocked)
+  }
+}
+
+// Run the security/status check as soon as the page loads
+checkAIStatus();
+
+// 2. The secured Chat function
 async function callClaude(userMsg) {
   history.push({ role: 'user', content: userMsg });
   const typing = appendTyping();
   try {
     const res = await fetch(AI_PROXY_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-Slate-Token': PROXY_TOKEN // Sending the security password
+      },
       body: JSON.stringify({
         system: SYSTEM_PROMPT,
         messages: history
       })
     });
+    
     const data = await res.json();
+    
+    // Catch errors from the proxy (like wrong token)
+    if (!res.ok) throw new Error(data.error || 'Connection failed');
+    
     const reply = data.reply || "Sorry, I couldn't get a response. Please try again.";
     history.push({ role: 'assistant', content: reply });
     typing.remove();
@@ -1614,6 +1648,7 @@ async function callClaude(userMsg) {
   } catch(e) {
     typing.remove();
     appendMsg("Oops! I'm having connection issues. You can reach us at adevictoraiden@gmail.com", 'bot');
+    console.error(e);
   }
 }
 
