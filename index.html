@@ -1647,8 +1647,8 @@ async function callClaude(userMsg) {
     appendMsg(reply, 'bot');
   } catch(e) {
     typing.remove();
-    appendMsg("Oops! I'm having connection issues. You can reach us at adevictoraiden@gmail.com", 'bot');
-    console.error(e);
+    appendMsg("Error: " + e.message, 'bot');
+    console.error("Groq Error Details:", e);
   }
 }
 
