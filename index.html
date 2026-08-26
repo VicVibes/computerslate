@@ -1031,74 +1031,77 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 =========================================== -->
 <main id="view-training" class="view">
   <div class="container section-pad text-center">
-    <div class="badge"><i class="fas fa-book-open"></i> Academy</div>
-    <h1 class="title-xl">Learn ComputerSlate in<br><span class="gradient-text">minutes, not days.</span></h1>
-    <p class="subtitle">Step-by-step guides and reference sheets for every role — free inside your portal.</p>
+    <div class="badge"><i class="fas fa-graduation-cap"></i> ComputerSlate Academy</div>
+    <h1 class="title-xl">Choose Your Training Path<br><span class="gradient-text">Master Your Operations</span></h1>
+    <p class="subtitle">Select a specialized learning portal below to access courses, interactive guides, and training resources.</p>
     
-    <div class="grid grid-cards text-left" style="margin-bottom: var(--space-6);">
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-user-shield"></i></div>
-        <h3 class="title-md">Administrator Guide</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Onboard your school/business, manage staff accounts, configure settings, and read the full analytics dashboard.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">Setup</span><span class="tag-line">Users</span><span class="tag-line">Dashboard</span><span class="tag-line">Reports</span>
-        </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
-      </div>
-
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-        <h3 class="title-md">Teacher & Class Teacher</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Mark attendance, enter subject scores, manage result sheets, and communicate with parents digitally.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">Attendance</span><span class="tag-line">Score Entry</span><span class="tag-line">Report Cards</span><span class="tag-line">Timetable</span>
-        </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
-      </div>
-
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-coins"></i></div>
-        <h3 class="title-md">Bursar & Finance</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Record payments, generate invoices, track defaulters through the debt-stage system, and send reminders.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">Fee Recording</span><span class="tag-line">Invoices</span><span class="tag-line">SMS Reminders</span><span class="tag-line">Debt Stages</span>
-        </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
-      </div>
-
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-brain"></i></div>
-        <h3 class="title-md">AI Tools Workshop</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Auto-generate student remarks, craft fee reminder messages, and summarise term performance in one click.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">Auto Remarks</span><span class="tag-line">Fee Reminders</span><span class="tag-line">Groq · Gemini</span>
-        </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
-      </div>
+    <div class="grid grid-cards text-left" style="margin-top: var(--space-6); margin-bottom: var(--space-6);">
       
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-file-pdf"></i></div>
-        <h3 class="title-md">Reports & Documents</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Generate, customise, and share PDF report cards, ID cards, and fee receipts. Includes printing tips.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">PDF Report Cards</span><span class="tag-line">ID Cards</span><span class="tag-line">Receipts</span><span class="tag-line">Print Guide</span>
+      <!-- 1. SCHOOL TRAINING -->
+      <div class="card-feat glass-solid elevation-1" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="card-icon"><i class="fas fa-school"></i></div>
+          <h3 class="title-md">School Training</h3>
+          <p class="text-muted" style="margin-bottom: 12px; min-height: 60px;">
+            Comprehensive training for school administrators, teachers, and bursars. Learn student registration, result compilation, attendance tracking, and automated fee reminders.
+          </p>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 20px;">
+            <span class="tag-line">Admin Guide</span>
+            <span class="tag-line">Teacher Portal</span>
+            <span class="tag-line">Report Cards</span>
+            <span class="tag-line">Fee Management</span>
+          </div>
         </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+        <button class="btn btn-primary btn-full" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')">
+          <i class="fas fa-graduation-cap"></i> Start School Training
+        </button>
       </div>
-      
-      <div class="card-feat glass-solid elevation-1">
-        <div class="card-icon"><i class="fas fa-life-ring"></i></div>
-        <h3 class="title-md">Support & Troubleshooting</h3>
-        <p class="text-muted" style="margin-bottom: 12px; min-height: 65px;">Common issues, FAQs, and step-by-step fixes. Escalate to our Telegram support line — we respond within the hour.</p>
-        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 16px;">
-          <span class="tag-line">FAQs</span><span class="tag-line">Error Fixes</span><span class="tag-line">Telegram Help</span>
+
+      <!-- 2. COMPUTER TRAINING (Redirects to Worker) -->
+      <div class="card-feat glass-solid elevation-2" style="display:flex; flex-direction:column; justify-content:space-between; border: 2px solid var(--c-gold);">
+        <div>
+          <div class="badge gold" style="margin-bottom: 8px;"><i class="fas fa-star"></i> Featured External Portal</div>
+          <div class="card-icon" style="color: var(--c-gold); background: rgba(42, 92, 224, 0.1);"><i class="fas fa-desktop"></i></div>
+          <h3 class="title-md">Computer Training</h3>
+          <p class="text-muted" style="margin-bottom: 12px; min-height: 60px;">
+            Hands-on computer literacy, digital skills, software applications, and IT fundamentals powered by our dedicated worker portal.
+          </p>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 20px;">
+            <span class="tag-line">Computer Literacy</span>
+            <span class="tag-line">IT Fundamentals</span>
+            <span class="tag-line">Software Tools</span>
+          </div>
         </div>
-        <button class="btn btn-outline btn-full" onclick="App.UI.showToast('Please log in to view this guide.', 'error')">Access Materials</button>
+        <button class="btn btn-primary btn-full" onclick="window.open('https://training-portal.adevictoraiden.workers.dev/','_blank','noopener')">
+          <i class="fas fa-external-link-alt"></i> Open Computer Training Portal
+        </button>
       </div>
+
+      <!-- 3. BUSINESS TRAINING -->
+      <div class="card-feat glass-solid elevation-1" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+          <h3 class="title-md">Business Training</h3>
+          <p class="text-muted" style="margin-bottom: 12px; min-height: 60px;">
+            Practical training for shop managers, cashiers, and business operators on POS handling, stock inventory management, sales reporting, and HR workflows.
+          </p>
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom: 20px;">
+            <span class="tag-line">POS Systems</span>
+            <span class="tag-line">Inventory Control</span>
+            <span class="tag-line">Sales Analytics</span>
+            <span class="tag-line">HR & Staff</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="App.UI.Modals.open('salesModal')">
+          <i class="fas fa-store"></i> Start Business Training
+        </button>
+      </div>
+
     </div>
     
     <div style="font-size: 14px; color: rgb(var(--rgb-muted));">
-      <i class="fas fa-info-circle text-gold" style="margin-right: 6px;"></i> All training materials are available inside the portal. Log in with your credentials to get started.
+      <i class="fas fa-info-circle text-gold" style="margin-right: 6px;"></i> Need custom corporate or school staff training? 
+      <a href="#" onclick="App.UI.Modals.open('salesModal'); return false;" class="text-gold" style="text-decoration:underline;">Contact Our Team</a>
     </div>
   </div>
 </main>
