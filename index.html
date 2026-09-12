@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>ComputerSlate | One Platform. Every Operation.</title>
-<link rel="icon" type="image/svg+xml" href="/computerslate-icon.svg">
-<link rel="shortcut icon" href="/computerslate-icon.svg">
-<link rel="apple-touch-icon" href="/computerslate-icon.svg">
-<meta name="description" content="Manage your School, Business, Office, or Training Centre from a single intelligent platform. Built specifically for Nigeria and Africa.">
+<meta name="description" content="Practical software for schools, businesses, offices and training teams in Nigeria — with clear workflows, local support and secure cloud access.">
 <meta name="keywords" content="school management software Nigeria, business inventory POS, office management, HR software, Gridzo AI, African SaaS">
 <meta name="author" content="Victor Adewumi">
 <meta name="robots" content="index, follow">
@@ -19,7 +16,7 @@
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="s://computerslate.com.ng">
+<meta property="og:url" content="https://computerslate.com.ng">
 <meta property="og:title" content="ComputerSlate | One Platform. Every Operation.">
 <meta property="og:description" content="Manage your School, Business, Office, or Training Centre from a single intelligent platform.">
 <meta property="og:image" content="https://computerslate.com.ng/images/og-cover.jpg">
@@ -43,11 +40,6 @@
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "NGN"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "50"
   },
   "author": {
     "@type": "Person",
@@ -429,6 +421,22 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 .pricing-switcher button.active { background: var(--c-blue); color: #fff; box-shadow: var(--shadow-sm); }
 .partner-logo { width: 26px; height: 26px; object-fit: contain; vertical-align: middle; margin-right: 8px; }
 
+/* Production navigation and accessibility refinements */
+.brand-mark{flex:0 0 auto;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.16)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(118,167,255,.65);outline-offset:3px}
+@media (max-width:768px){nav{height:auto;min-height:64px;display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"brand . actions" "tabs tabs tabs";padding:8px 12px 7px;row-gap:6px}.nav-brand{grid-area:brand}.nav-domains{grid-area:tabs;width:100%;overflow-x:auto!important;justify-content:flex-start;scrollbar-width:none;padding:3px!important}.nav-domains::-webkit-scrollbar{display:none}nav>.flex{grid-area:actions}.nav-btn{flex:0 0 auto;min-width:72px;padding:8px 10px;font-size:11px}.view{padding-top:108px}.hero-wrap{margin-top:-108px!important;padding-top:108px!important}}
+@media (max-width:480px){.nav-brand{font-size:15px}.nav-brand span{display:inline}.brand-mark{width:28px;height:28px}.cmd-trigger{display:none}.nav-btn{min-width:68px;font-size:10px}#cs-agent-bubble{right:16px!important;bottom:18px!important;width:52px!important;height:52px!important}#cs-agent-panel{right:10px!important;bottom:82px!important;width:calc(100vw - 20px)!important;max-width:none!important;max-height:72vh}#cs-agent-messages{min-height:220px!important;max-height:45vh!important}}
+
+/* Product image carousels */
+.product-carousel{position:relative;overflow:hidden;background:#eef2f7;border-radius:8px}
+.product-carousel-track{display:flex;transition:transform .55s ease;will-change:transform}
+.product-carousel-track img{display:block;flex:0 0 100%;width:100%;height:auto;object-fit:cover}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:rgba(10,31,68,.78);color:#fff;font-size:25px;line-height:1;cursor:pointer;z-index:2}
+.carousel-arrow.prev{left:12px}.carousel-arrow.next{right:12px}
+.carousel-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}
+.carousel-dots button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer}
+.carousel-dots button.active{background:#fff;transform:scale(1.25)}
+@media(prefers-reduced-motion:reduce){.product-carousel-track{transition:none}}
 </style>
 
 
@@ -471,7 +479,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 <!-- Navigation -->
 <nav>
   <a href="#home" onclick="App.Router.navigate('home')" class="nav-brand">
-    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiMwQTFGNDQiLz48cGF0aCBkPSJNMTcgMTZoMzBhNCA0IDAgMDE0IDR2MjJhNCA0IDAgMDEtNCA0SDE3YTQgNCAwIDAxLTQtNFYyMGE0IDQgMCAwMTQtNFoiIGZpbGw9IiMyQTVDRTAiLz48cGF0aCBkPSJNMjEgMjRoMjJNMjEgMzJoMTVNMjEgNDBoMTgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSI0NSIgY3k9IjQwIiByPSI3IiBmaWxsPSIjNzZBN0ZGIi8+PC9zdmc+" alt="ComputerSlate icon" width="32" height="32">
+    <svg class="brand-mark" width="32" height="32" viewBox="0 0 64 64" role="img" aria-label="ComputerSlate logo" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="15" fill="#0A1F44"/><path d="M17 16h30a4 4 0 014 4v22a4 4 0 01-4 4H17a4 4 0 01-4-4V20a4 4 0 014-4Z" fill="#2A5CE0"/><path d="M21 24h22M21 32h15M21 40h18" stroke="#fff" stroke-width="4" stroke-linecap="round"/><circle cx="45" cy="40" r="7" fill="#76A7FF"/></svg>
     Computer<span>Slate</span>
   </a>
   
@@ -481,7 +489,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
     <button class="nav-btn" data-target="school" onclick="App.Router.navigate('school')">Schools</button>
     <button class="nav-btn" data-target="business" onclick="App.Router.navigate('business')">Businesses</button>
     <button class="nav-btn" data-target="office" onclick="App.Router.navigate('office')">Offices</button>
-    <button class="nav-btn" data-target="training" onclick="window.open('https://training.computerslate.com.ng/','_blank','noopener')">Training</button>
+    <button class="nav-btn" data-target="training" onclick="App.Router.navigate('training')">Training</button>
   </div>
 
   <div class="flex items-center gap-2">
@@ -511,20 +519,19 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   <div class="container" style="padding-top: var(--space-6); padding-bottom: var(--space-6);">
     <div class="hero-split">
       <div>
-        <div class="badge gold" style="margin-bottom: var(--space-3); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #fff;"><i class="fas fa-rocket"></i> Africa's Operations OS</div>
+        <div class="badge gold" style="margin-bottom: var(--space-3); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #fff;"><i class="fas fa-rocket"></i> Operations software for growing teams</div>
         <h1 class="title-xl" style="color:#fff;">One Platform.<br>Every <span class="gradient-text" style="background: linear-gradient(135deg, #6FA8FF, #A9C6FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Operation.</span></h1>
         <p class="subtitle" style="color: rgba(255,255,255,0.8);">Manage your School, Business, Office, or Training Centre from a single intelligent platform. Track students, staff, inventory, payments, reports, and daily operations — all in one place.</p>
         
         <div class="hero-ctas">
-          <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')"><i class="fas fa-play"></i> Register School</button>
+          <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng','_blank','noopener')"><i class="fas fa-play"></i> Register School</button>
           <button class="btn btn-outline-light" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-calendar"></i> Book a Demo</button>
-          <button class="btn btn-outline-light" onclick="App.UI.scrollToVideo()"><i class="fas fa-video"></i> Watch Video</button>
         </div>
 
         <div class="hero-trust" style="color: rgba(255,255,255,0.75);">
           <span><i class="fas fa-check-circle" style="color:#6FA8FF;"></i> No credit card required</span>
           <span><i class="fas fa-check-circle" style="color:#6FA8FF;"></i> Free forever plan</span>
-          <span><i class="fas fa-star" style="color:#6FA8FF;"></i> 4.9/5 from 50+ orgs</span>
+          <span><i class="fas fa-headset" style="color:#6FA8FF;"></i> Human support when you need it</span>
         </div>
       </div>
     </div>
@@ -534,49 +541,13 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   <!-- TRUST BAR: Nigerian Signals -->
   <div class="container">
     <div class="trust-bar">
-      <div class="trust-item"><i class="fas fa-map-marker-alt"></i> 🇳🇬 Built for Nigerian Schools & Businesses</div>
+      <div class="trust-item"><i class="fas fa-map-marker-alt"></i> 🇳🇬 Built for Nigerian teams</div>
       <div class="trust-item"><i class="fas fa-credit-card"></i> Paystack Integration</div>
       <div class="trust-item"><i class="fab fa-telegram"></i> Telegram Support</div>
       <div class="trust-item"><i class="fas fa-sms"></i> SMS Notifications</div>
       <div class="trust-item"><i class="fas fa-headset"></i> Local Support</div>
       <div class="trust-item"><i class="fas fa-money-bill-wave"></i> Naira Pricing</div>
     </div>
-  </div>
-
-  <!-- LIVE STATS -->
-  <div class="container section-pad text-center">
-    <div class="grid grid-cards">
-      <div class="stat-box glass-solid elevation-1">
-        <div class="stat-num counter" data-target="50" data-suffix="+">0</div>
-        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Active Organizations</div>
-      </div>
-      <div class="stat-box glass-solid elevation-1">
-        <div class="stat-num counter" data-target="150" data-suffix="k">0</div>
-        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Records Managed</div>
-      </div>
-      <div class="stat-box glass-solid elevation-1">
-        <div class="stat-num counter" data-target="99.9" data-suffix="%">0</div>
-        <div class="text-muted" style="font-size: 13px; font-weight: 600; text-transform: uppercase;">Platform Uptime</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VIDEO WALKTHROUGH -->
-  <div class="container section-pad text-center" id="videoSection">
-    <div class="badge gold"><i class="fas fa-play-circle"></i> Product Walkthrough</div>
-    <h2 class="title-lg">Watch ComputerSlate in Action</h2>
-    <p class="subtitle">See how schools and businesses across Nigeria streamline their operations in 60 seconds.</p>
-    
-    <div class="video-section" onclick="App.UI.showToast('Video coming soon. Replace video/demo.mp4 or embed a YouTube iframe.', 'info')">
-      <div class="video-placeholder">
-        <img src="images/video-cover.jpg" alt="Video Thumbnail" loading="lazy" onerror="this.style.display='none'">
-        <div class="video-overlay">
-          <div class="play-btn"><i class="fas fa-play"></i></div>
-          <p style="color: #fff; margin-top: 16px; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">60-Second Walkthrough</p>
-        </div>
-      </div>
-    </div>
-    <p class="text-muted" style="margin-top: var(--space-2); font-size: 13px;"><i class="fas fa-info-circle"></i> When ready, replace <code>video/demo.mp4</code> or swap the placeholder for a YouTube iframe.</p>
   </div>
 
   <!-- DOMAINS -->
@@ -661,9 +632,9 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 
   <!-- INTEGRATIONS -->
   <div class="container section-pad text-center">
-    <div class="badge"><i class="fas fa-plug"></i> Integrations</div>
+    <div class="badge"><i class="fas fa-handshake"></i> Partners & Integrations</div>
     <h2 class="title-lg">Works with the tools you already use.</h2>
-    <p class="subtitle">Seamlessly connect your existing payment, communication, and productivity stack.</p>
+    <p class="subtitle">Connect with familiar communication, infrastructure and productivity tools where supported.</p>
     
     <div class="integrations-row" style="margin-top: var(--space-6);">
       <div class="int-placeholder"><img class="partner-logo" src="https://cdn.simpleicons.org/google/4285F4" alt="Google">Google</div>
@@ -671,20 +642,20 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
       <div class="int-placeholder"><img class="partner-logo" src="https://cdn.simpleicons.org/appwrite/FD366E" alt="Appwrite">Appwrite</div>
       <div class="int-placeholder"><img class="partner-logo" src="https://cdn.simpleicons.org/telegram/26A5E4" alt="Telegram">Telegram</div>
     </div>
-    <p class="text-muted" style="margin-top: var(--space-3); font-size: 13px;">Our platform partners.</p>
+    <p class="text-muted" style="margin-top: var(--space-3); font-size: 13px;">Technology ecosystem and integrations used across ComputerSlate products. Third-party brand names remain the property of their respective owners.</p>
   </div>
 
   <!-- SECURITY -->
   <div class="container section-pad text-center">
     <div class="badge"><i class="fas fa-shield-alt"></i> Security</div>
     <h2 class="title-lg">Your data is protected.</h2>
-    <p class="subtitle">Enterprise-grade security designed for African compliance and peace of mind.</p>
+    <p class="subtitle">Security-minded infrastructure, access controls and operational safeguards for everyday use.</p>
     
     <div class="security-grid" style="margin-top: var(--space-6);">
       <div class="security-card glass-solid elevation-1">
         <i class="fas fa-lock"></i>
-        <h3 class="title-md">End-to-End Encryption</h3>
-        <p class="text-muted">All sensitive records are encrypted in transit and at rest using modern TLS standards.</p>
+        <h3 class="title-md">Secure Connections</h3>
+        <p class="text-muted">Web traffic is protected with HTTPS/TLS, with additional safeguards applied by the services that power each product.</p>
       </div>
       <div class="security-card glass-solid elevation-1">
         <i class="fas fa-user-shield"></i>
@@ -693,8 +664,8 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
       </div>
       <div class="security-card glass-solid elevation-1">
         <i class="fas fa-history"></i>
-        <h3 class="title-md">Daily Backups</h3>
-        <p class="text-muted">Automated backups with point-in-time recovery. Your records are always safe.</p>
+        <h3 class="title-md">Operational Resilience</h3>
+        <p class="text-muted">Backup and recovery practices are maintained according to the infrastructure used by each ComputerSlate service.</p>
       </div>
       <div class="security-card glass-solid elevation-1">
         <i class="fas fa-cloudflare"></i>
@@ -809,7 +780,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
       <h2 class="title-lg">Ready to streamline your operations?</h2>
       <p class="text-muted">Join 50+ Nigerian schools and businesses already using ComputerSlate. Start free today — no credit card required.</p>
       <div class="flex justify-center gap-3" style="flex-wrap: wrap;">
-        <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')"><i class="fas fa-rocket"></i> Register School</button>
+        <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng','_blank','noopener')"><i class="fas fa-rocket"></i> Register School</button>
         <button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')"><i class="fas fa-envelope"></i> Contact Sales</button>
       </div>
       <div class="hero-trust" style="justify-content: center; margin-top: var(--space-4);">
@@ -843,15 +814,15 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
         <h1>Run your school from <span>one clear system.</span></h1>
         <p class="product-lead">Admissions, attendance, fees, results, communication and day-to-day administration — connected in one place for your entire school team.</p>
         <div class="product-actions">
-          <button class="btn btn-primary" onclick="App.UI.Modals.open('authModal')">Login to your school <i class="fas fa-arrow-right"></i></button>
-          <button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')">Register a new school</button>
+          <button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')">Login to your school <i class="fas fa-arrow-right"></i></button>
+          <button class="btn btn-outline" onclick="window.open('https://school.computerslate.com.ng','_blank','noopener')">Register a new school</button>
         </div>
         <div class="product-proof"><i class="fas fa-check-circle"></i> Built for administrators, teachers and bursars <span>•</span> <i class="fas fa-check-circle"></i> Role-based access</div>
       </div>
       <div class="product-hero-media">
         <div class="media-window">
           <div class="window-bar"><span></span><span></span><span></span><b>School dashboard</b></div>
-          <img src="images/school-dashboard.png" alt="ComputerSlate school dashboard" loading="lazy">
+          <div class="product-carousel" data-carousel="school"><div class="product-carousel-track"><img src="images/school-dashboard.png" alt="ComputerSlate school dashboard" loading="lazy"><img src="images/school-cbt.png" alt="ComputerSlate school CBT interface" loading="lazy"></div><button class="carousel-arrow prev" aria-label="Previous school image">‹</button><button class="carousel-arrow next" aria-label="Next school image">›</button><div class="carousel-dots" aria-label="School image slides"></div></div>
         </div>
       </div>
     </section>
@@ -889,7 +860,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   <div class="product-page product-business">
     <section class="product-hero container">
       <div class="product-hero-copy"><div class="product-eyebrow"><span class="eyebrow-dot"></span> Business & retail</div><h1>Know what your business has, sells and <span>earns.</span></h1><p class="product-lead">Bring stock, sales, expenses and your digital storefront into a workflow your team can actually use.</p><div class="product-actions"><button class="btn btn-primary" onclick="App.UI.Modals.open('salesModal')">Build for my business <i class="fas fa-arrow-right"></i></button><button class="btn btn-outline" onclick="App.UI.showToast('Demo request received','success')">View the workflow</button></div><div class="product-proof"><i class="fas fa-check-circle"></i> Inventory visibility <span>•</span><i class="fas fa-check-circle"></i> Sales reporting <span>•</span><i class="fas fa-check-circle"></i> Multi-location ready</div></div>
-      <div class="product-hero-media"><div class="media-window dark-window"><div class="window-bar"><span></span><span></span><span></span><b>Business expenses</b></div><img src="images/business-expenses.png" alt="Business expenses dashboard" loading="lazy"></div></div>
+      <div class="product-hero-media"><div class="media-window dark-window"><div class="window-bar"><span></span><span></span><span></span><b>Business expenses</b></div><div class="product-carousel" data-carousel="business"><div class="product-carousel-track"><img src="images/business-expenses.png" alt="Business expenses dashboard" loading="lazy"><img src="images/school-dashboard.png" alt="Business operations dashboard" loading="lazy"></div><button class="carousel-arrow prev" aria-label="Previous business image">‹</button><button class="carousel-arrow next" aria-label="Next business image">›</button><div class="carousel-dots" aria-label="Business image slides"></div></div></div></div>
     </section>
     <section class="product-strip container"><div><strong>Stock</strong><span>Know what's on the shelf</span></div><div><strong>Sales</strong><span>See what's moving</span></div><div><strong>Expenses</strong><span>Track where money goes</span></div><div><strong>Website</strong><span>Sell beyond the shop</span></div></section>
     <section class="product-section container"><div class="section-intro"><span class="product-eyebrow">Built around the operation</span><h2>Less guessing. More control.</h2><p>Give owners and staff the information they need without forcing them through complicated enterprise software.</p></div><div class="feature-grid feature-grid-3"><article class="product-feature"><div class="feature-number">01</div><i class="fas fa-boxes-stacked"></i><h3>Live inventory</h3><p>Keep stock counts visible across locations and update quantities as sales happen.</p><span>Inventory control</span></article><article class="product-feature"><div class="feature-number">02</div><i class="fas fa-cash-register"></i><h3>Fast POS</h3><p>Give cashiers a straightforward checkout flow with receipts and a clear sales record.</p><span>Point of sale</span></article><article class="product-feature"><div class="feature-number">03</div><i class="fas fa-chart-line"></i><h3>Sales analytics</h3><p>Understand best sellers, daily performance, expenses and margins without digging through spreadsheets.</p><span>Reporting</span></article></div></section>
@@ -905,7 +876,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   <div class="product-page product-office">
     <section class="product-hero container">
       <div class="product-hero-copy"><div class="product-eyebrow"><span class="eyebrow-dot"></span> Office management</div><h1>Make everyday office work <span>move faster.</span></h1><p class="product-lead">Connect people, documents, assets and routine workflows — with AI that helps staff get work done instead of getting in the way.</p><div class="product-actions"><button class="btn btn-primary" onclick="App.Redirects.go('gridzo')">Try Gridzo AI <i class="fas fa-arrow-up-right-from-square"></i></button><button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')">Plan an office setup</button></div><div class="product-proof"><i class="fas fa-check-circle"></i> HR & staff <span>•</span><i class="fas fa-check-circle"></i> Assets <span>•</span><i class="fas fa-check-circle"></i> Invoicing <span>•</span><i class="fas fa-check-circle"></i> AI</div></div>
-      <div class="product-hero-media"><div class="media-window dark-window"><div class="window-bar"><span></span><span></span><span></span><b>Gridzo AI</b></div><img src="images/office-ai.png" alt="Gridzo AI spreadsheet assistant" loading="lazy"></div></div>
+      <div class="product-hero-media"><div class="media-window dark-window"><div class="window-bar"><span></span><span></span><span></span><b>Gridzo AI</b></div><div class="product-carousel" data-carousel="office"><div class="product-carousel-track"><img src="images/office-ai.png" alt="Gridzo AI spreadsheet assistant" loading="lazy"><img src="images/business-expenses.png" alt="Office finance workspace" loading="lazy"></div><button class="carousel-arrow prev" aria-label="Previous office image">‹</button><button class="carousel-arrow next" aria-label="Next office image">›</button><div class="carousel-dots" aria-label="Office image slides"></div></div></div></div>
     </section>
     <section class="product-strip container"><div><strong>People</strong><span>Staff records & roles</span></div><div><strong>Assets</strong><span>Assignments & condition</span></div><div><strong>Invoices</strong><span>Paid, pending & overdue</span></div><div><strong>AI</strong><span>Work directly in your data</span></div></section>
     <section class="product-section container"><div class="section-intro"><span class="product-eyebrow">One office, fewer loose ends</span><h2>The systems behind a well-run office.</h2><p>Keep routine information organised and give your team simple tools for the work that usually gets lost in emails and spreadsheets.</p></div><div class="feature-grid feature-grid-3"><article class="product-feature"><div class="feature-number">01</div><i class="fas fa-users"></i><h3>HR & employee hub</h3><p>Maintain a central staff directory with roles, contact details and essential employee information.</p><span>People operations</span></article><article class="product-feature"><div class="feature-number">02</div><i class="fas fa-laptop"></i><h3>Asset management</h3><p>Know who has each laptop, vehicle, key or other company asset and when it is due back.</p><span>Company assets</span></article><article class="product-feature"><div class="feature-number">03</div><i class="fas fa-file-invoice-dollar"></i><h3>Client invoicing</h3><p>Create professional invoices and keep paid, pending and overdue accounts visible.</p><span>Finance workflow</span></article></div></section>
@@ -919,9 +890,9 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
 =========================================== -->
 <main id="view-training" class="view">
   <div class="product-page product-training">
-    <section class="training-hero container"><div class="product-eyebrow"><span class="eyebrow-dot"></span> ComputerSlate Academy</div><h1>Training that turns software into <span>confidence.</span></h1><p class="product-lead">Practical learning paths for school teams, business operators and computer users — focused on skills people can apply immediately.</p></section>
+    <section class="training-hero container"><div class="product-eyebrow"><span class="eyebrow-dot"></span> ComputerSlate Academy</div><h1>Training that turns software into <span>confidence.</span></h1><p class="product-lead">Practical learning paths for school teams, business operators and computer users — focused on skills people can apply immediately.</p><div class="product-actions"><button class="btn btn-primary" onclick="window.open('https://training.computerslate.com.ng/','_blank','noopener')">Open Training Portal <i class="fas fa-arrow-up-right-from-square"></i></button><button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')">Ask about team training</button></div></section>
     <section class="training-paths container">
-      <article class="training-card training-card-featured"><div class="training-card-top"><span class="training-index">01</span><span class="training-label">School teams</span></div><div class="training-icon"><i class="fas fa-school"></i></div><h2>School Training</h2><p>Train administrators, teachers and bursars to confidently manage student records, results, attendance, fees and communication.</p><div class="training-topics"><span>Administration</span><span>Teachers</span><span>Results</span><span>Fees</span></div><button class="btn btn-primary" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener')">Start school training <i class="fas fa-arrow-right"></i></button></article>
+      <article class="training-card training-card-featured"><div class="training-card-top"><span class="training-index">01</span><span class="training-label">School teams</span></div><div class="training-icon"><i class="fas fa-school"></i></div><h2>School Training</h2><p>Train administrators, teachers and bursars to confidently manage student records, results, attendance, fees and communication.</p><div class="training-topics"><span>Administration</span><span>Teachers</span><span>Results</span><span>Fees</span></div><button class="btn btn-primary" onclick="window.open('https://training.computerslate.com.ng/','_blank','noopener')">Start school training <i class="fas fa-arrow-right"></i></button></article>
       <article class="training-card"><div class="training-card-top"><span class="training-index">02</span><span class="training-label">Digital skills</span></div><div class="training-icon"><i class="fas fa-desktop"></i></div><h2>Computer Training</h2><p>Build practical computer literacy, software skills and IT fundamentals through guided, hands-on learning.</p><div class="training-topics"><span>Computer basics</span><span>Software</span><span>IT fundamentals</span></div><button class="btn btn-outline" onclick="window.open('https://training.computerslate.com.ng/','_blank','noopener')">Open training portal <i class="fas fa-arrow-up-right-from-square"></i></button></article>
       <article class="training-card"><div class="training-card-top"><span class="training-index">03</span><span class="training-label">Business operators</span></div><div class="training-icon"><i class="fas fa-store"></i></div><h2>Business Training</h2><p>Help shop managers and operators handle POS, stock, sales reporting and everyday business workflows with confidence.</p><div class="training-topics"><span>POS</span><span>Inventory</span><span>Sales</span><span>Staff</span></div><button class="btn btn-outline" onclick="App.UI.Modals.open('salesModal')">Start business training <i class="fas fa-arrow-right"></i></button></article>
     </section>
@@ -938,9 +909,15 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
     
     <div class="flex justify-center gap-3" style="flex-wrap: wrap; margin-bottom: var(--space-3); font-size: 14px; color: rgb(var(--rgb-muted));">
       <a onclick="App.Router.navigate('home')">Home</a>
-      <a onclick="window.open('https://training.computerslate.com.ng/','_blank','noopener')">Academy</a>
-      <a onclick="App.UI.showToast('Privacy Policy coming soon', 'info')">Privacy Policy</a>
-      <a onclick="App.UI.Modals.open('salesModal')">Contact Us</a>
+      <a onclick="App.Router.navigate('school')">School</a>
+      <a onclick="App.Router.navigate('business')">Business</a>
+      <a onclick="App.Router.navigate('office')">Office</a>
+      <a onclick="App.Router.navigate('training')">Training</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="service-terms.html">Service Terms</a>
+      <a href="acceptable-use.html">Acceptable Use</a>
+      <a href="mailto:admin@computerslate.com.ng">Contact</a>
       <a href="#" data-redirect="gridzo" class="text-gold">Gridzo AI</a>
     </div>
     <div style="font-size: 12px; color: rgb(var(--rgb-muted)); opacity: 0.7;">
@@ -959,6 +936,9 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
       <div class="cmd-item" onclick="App.Router.navigate('home'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-home"></i> Go to Home</div>
       <div class="cmd-item" onclick="App.Router.navigate('school'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-graduation-cap"></i> View School Features</div>
       <div class="cmd-item" onclick="App.Router.navigate('business'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-store"></i> View Business Features</div>
+      <div class="cmd-item" onclick="App.Router.navigate('office'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-building"></i> View Office Features</div>
+      <div class="cmd-item" onclick="App.Router.navigate('training'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-graduation-cap"></i> View Training</div>
+      <div class="cmd-item" onclick="window.open('https://school.computerslate.com.ng/auth','_blank','noopener'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-right-to-bracket"></i> Login to School</div>
       <div class="cmd-item" onclick="App.Theme.toggle(); App.UI.Modals.close('cmdPalette');"><i class="fas fa-moon"></i> Toggle Dark/Light Theme</div>
       <div class="cmd-item" onclick="App.Redirects.go('gridzo'); App.UI.Modals.close('cmdPalette');"><i class="fas fa-sparkles"></i> Open Gridzo AI</div>
       <div class="cmd-item" onclick="App.UI.Modals.close('cmdPalette'); App.UI.Modals.open('salesModal');"><i class="fas fa-envelope"></i> Contact Sales</div>
@@ -971,7 +951,7 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   <div class="modal-content">
     <button class="modal-close" onclick="App.UI.Modals.close('salesModal')"><i class="fas fa-times"></i></button>
     <h3 class="title-md">Contact Sales</h3>
-    <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Leave your details and we'll get you onboarded.</p>
+    <p class="text-muted" style="margin-bottom: var(--space-3); font-size: 14px;">Tell us what you need and our team will respond from admin@computerslate.com.ng.</p>
     <form onsubmit="App.API.submitSalesForm(event)">
       <div class="form-group"><label>Organization Name</label><input name="organization" type="text" required class="form-input" placeholder="e.g. Zenith Academy"></div>
       <div class="form-group"><label>Email Address</label><input name="email" type="email" required class="form-input" placeholder="admin@domain.com"></div>
@@ -981,20 +961,6 @@ footer { border-top: 1px solid rgba(var(--rgb-border), 0.1); padding: var(--spac
   </div>
 </div>
 
-<!-- Auth Modal (Mock) -->
-<div id="authModal" class="modal-backdrop" onclick="App.UI.Modals.closeOutside(event, 'authModal')">
-  <div class="modal-content text-center">
-    <button class="modal-close" onclick="App.UI.Modals.close('authModal')"><i class="fas fa-times"></i></button>
-    <div style="font-size: 40px; color: var(--c-gold); margin-bottom: 16px;"><i class="fas fa-lock"></i></div>
-    <h3 class="title-md">Secure Login</h3>
-    <p class="text-muted" style="margin-bottom: var(--space-4); font-size: 14px;">Enter your portal credentials to continue.</p>
-    <form onsubmit="App.API.mockLogin(event)">
-      <div class="form-group"><input type="email" required class="form-input" placeholder="Email Address"></div>
-      <div class="form-group"><input type="password" required class="form-input" placeholder="Password"></div>
-      <button type="submit" class="btn btn-primary btn-full">Sign In</button>
-    </form>
-  </div>
-</div>
 
 <!-- ==========================================
      APPLICATION LOGIC
@@ -1008,13 +974,23 @@ const MOCK_SCHOOLS = [
 
 const App = {
   Redirects: {
-    data: {"links":{"training":"https://training.computerslate.com.ng/","contact_email":"mailto:admin@computerslate.com.ng","telegram":"https://t.me/","gridzo":"https://script.google.com/macros/s/AKfycbwRN4S92Eh9tJUuy0b1zw4ICE8Myjaqm_jTvF2LauRlvP21gJMFl9Yh8Zh1Ke4nrSiqLg/exec","creator":"https://victoradewumi.com","school_starter":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20School%20Starter","school_pro":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20School%20Pro","school_enterprise":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20School%20Enterprise","business_starter":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Starter","business_pro":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Pro","business_enterprise":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Enterprise","office_starter":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Starter","office_pro":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Pro","office_enterprise":"mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Enterprise"},"pricing":{"school":[{"name":"Starter","price":"₦0","note":"Free forever • Up to 50 students","features":["Digital registration","Fee tracking","Daily attendance","Email support"],"action":"Start Free","link":"school_starter"},{"name":"School Pro","price":"₦25k","note":"Per term • Unlimited students","features":["Everything in Starter","Telegram alerts","AI tools","Priority support"],"action":"Choose School Pro","link":"school_pro"},{"name":"Enterprise","price":"Custom","note":"For multi-campus schools","features":["Multi-campus dashboard","Custom branding","Dedicated onboarding"],"action":"Contact Sales","link":"school_enterprise"}],"business":[{"name":"Starter","price":"₦0","note":"Free forever • One location","features":["Inventory basics","Sales records","Daily reports","Email support"],"action":"Start Free","link":"business_starter"},{"name":"Business Pro","price":"₦30k","note":"Per month • Unlimited products","features":["POS and inventory","Telegram alerts","AI insights","Priority support"],"action":"Choose Business Pro","link":"business_pro"},{"name":"Enterprise","price":"Custom","note":"For multiple locations","features":["Multi-location dashboard","API access","Custom integrations"],"action":"Contact Sales","link":"business_enterprise"}],"office":[{"name":"Starter","price":"₦0","note":"Free forever • Small teams","features":["Team directory","Task tracking","Basic reports","Email support"],"action":"Start Free","link":"office_starter"},{"name":"Office Pro","price":"₦20k","note":"Per month • Unlimited staff","features":["HR tools","Asset management","Telegram alerts","Priority support"],"action":"Choose Office Pro","link":"office_pro"},{"name":"Enterprise","price":"Custom","note":"For larger organizations","features":["Advanced permissions","Custom workflows","Dedicated manager"],"action":"Contact Sales","link":"office_enterprise"}]}},
-    init() {
+    data: { links: {
+      training: 'https://training.computerslate.com.ng/',
+      contact_email: 'mailto:admin@computerslate.com.ng',
+      school_login: 'https://school.computerslate.com.ng/auth',
+      school_register: 'https://school.computerslate.com.ng'
+    }, pricing: {} },
+    async init() {
       document.querySelectorAll('[data-redirect]').forEach(el => el.addEventListener('click', event => { event.preventDefault(); this.go(el.dataset.redirect); }));
+      try {
+        const response = await fetch('redirect.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('redirect.json unavailable');
+        const remote = await response.json();
+        this.data = { ...this.data, ...remote, links: { ...(this.data.links || {}), ...(remote.links || {}) }, pricing: { ...(this.data.pricing || {}), ...(remote.pricing || {}) } };
+      } catch (_) { console.info('Using built-in essential links.'); }
     },
     go(key) {
-      if (key.startsWith('school_')) { window.open('https://school.computerslate.com.ng/auth','_blank','noopener'); return; }
-      const url = this.data.links && this.data.links[key];
+      const url = (this.data.links && this.data.links[key]) || (key.startsWith('school_') ? 'https://school.computerslate.com.ng' : null);
       if (url) window.open(url, url.startsWith('mailto:') ? '_self' : '_blank', 'noopener');
     },
     salesMail(form) { const email = (this.data.links && this.data.links.contact_email) || 'mailto:admin@computerslate.com.ng'; const subject = encodeURIComponent('ComputerSlate sales request'); const body = encodeURIComponent('Organization: ' + form.elements.organization.value + '\nEmail: ' + form.elements.email.value + '\nPhone: ' + form.elements.phone.value); window.location.href = email + (email.includes('?') ? '&' : '?') + 'subject=' + subject + '&body=' + body; }
@@ -1237,13 +1213,12 @@ const App = {
       document.getElementById('schoolSearch').value = name;
       document.getElementById('schoolDropdown').style.display = 'none';
       this.showToast(`Selected ${name}`, 'success');
-      window.open('https://school.computerslate.com.ng', '_blank', 'noopener');
+      window.open('https://school.computerslate.com.ng/auth', '_blank', 'noopener');
     }
   },
 
   API: {
     submitSalesForm(e) { e.preventDefault(); App.Redirects.salesMail(e.target); App.UI.Modals.close('salesModal'); e.target.reset(); },
-    mockLogin(e) { e.preventDefault(); window.open('https://school.computerslate.com.ng/auth','_blank','noopener'); },
     subscribeNewsletter(e) {
       e.preventDefault();
       App.UI.showToast("Subscribed successfully! Check your inbox.", "success");
@@ -1252,8 +1227,8 @@ const App = {
   },
 
   start() {
-    this.Redirects.init();
-    this.Theme.init(); this.UI.init(); this.Pricing.render('school'); this.Router.init();
+    this.Redirects.init().finally(() => this.Pricing.render('school'));
+    this.Theme.init(); this.UI.init(); this.Router.init();
     document.querySelectorAll('img').forEach(img => { if (!img.closest('a') && !img.classList.contains('partner-logo')) { img.classList.add('zoomable'); img.addEventListener('click', () => App.UI.openImage(img)); } });
   }
 };
@@ -1263,7 +1238,7 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape') App.
 </script>
 
 <!-- ── AI CUSTOMER AGENT ──────────────────────────────────── -->
-<div id="cs-agent-bubble" onclick="CSAgent.open()" title="Chat with Slate AI">
+<div id="cs-agent-bubble" onclick="CSAgent.open()" title="Chat with Slate Assistant">
   <i class="fas fa-robot"></i>
   <span id="cs-agent-badge"></span>
 </div>
@@ -1273,15 +1248,15 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape') App.
     <div style="display:flex;align-items:center;gap:10px;">
       <div id="cs-agent-avatar"><i class="fas fa-robot"></i></div>
       <div>
-        <div style="font-weight:700;font-size:15px;">Slate AI</div>
-        <div style="font-size:11px;opacity:.75;">ComputerSlate Assistant • Online</div>
+        <div style="font-weight:700;font-size:15px;">Slate Assistant</div>
+        <div id="cs-agent-status" style="font-size:11px;opacity:.78;">ComputerSlate Assistant • Ready</div>
       </div>
     </div>
     <button onclick="CSAgent.close()" style="background:none;border:none;color:inherit;cursor:pointer;font-size:18px;opacity:.7;"><i class="fas fa-times"></i></button>
   </div>
   <div id="cs-agent-messages"></div>
   <div id="cs-agent-input-row">
-    <input id="cs-agent-input" type="text" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter')CSAgent.send()">
+    <input id="cs-agent-input" type="text" placeholder="Ask about School, Business, Office or Training…" onkeydown="if(event.key==='Enter')CSAgent.send()">
     <button onclick="CSAgent.send()"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
@@ -1353,187 +1328,55 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape') App.
 
 <script>
 (function(){
-const SYSTEM_PROMPT = `You are Slate AI, a helpful and friendly customer assistant for ComputerSlate — a Nigerian SaaS platform that manages Schools, Businesses, and Offices.
-Key products:
-- ComputerSlate School: student registration, fee tracking, attendance, report cards, exam results. Free starter (up to 50 students). School Pro at ₦25k/term. Register at https://school.computerslate.com.ng/auth
-- ComputerSlate Business: POS, inventory, sales reports. Business Pro at ₦30k/month.
-- ComputerSlate Office: HR tools, task tracking, asset management. Office Pro at ₦20k/month.
-- Gridzo AI: AI assistant built into the platform.
-- Training portal: https://training.computerslate.com.ng
-- Creator: Victor Adewumi — profile.html
-
-Navigation commands you can suggest (use exactly):
-- [NAV:home] — Go to Home
-- [NAV:school] — Go to Schools section
-- [NAV:business] — Go to Businesses section
-- [NAV:office] — Go to Offices section
-- [OPEN:https://school.computerslate.com.ng/auth] — Register a school
-- [OPEN:https://school.computerslate.com.ng] — Login to school portal
-- [OPEN:https://training.computerslate.com.ng] — Open Training portal
-
-Keep replies concise (2-4 sentences max), warm, and action-oriented. Always offer a next step.
-If unsure, offer to connect them with support at admin@computerslate.com.ng.`;
-
-const SUGGESTIONS = [
-  "👋 Hi! I'm Slate AI. Want to know how ComputerSlate can help your school manage fees and results?",
-  "💡 Did you know you can start managing your school for free? Up to 50 students — no credit card needed!",
-  "🏫 Are you a school administrator? I can walk you through registering on ComputerSlate in under 2 minutes.",
-  "📊 Need to track student fees and send results to parents digitally? ComputerSlate makes it seamless.",
-  "🚀 ComputerSlate Business lets you run POS, track inventory, and get daily reports — starting free!",
+const SYSTEM_PROMPT = `You are Slate Assistant, the concise customer assistant for ComputerSlate, a Nigerian operations software company serving schools, businesses, offices and training teams.
+Verified destinations:
+- Login to an existing school: https://school.computerslate.com.ng/auth
+- Register a new school: https://school.computerslate.com.ng
+- Training portal: https://training.computerslate.com.ng/
+- Support: admin@computerslate.com.ng
+Navigation commands: [NAV:home], [NAV:school], [NAV:business], [NAV:office], [NAV:training]. External commands: [OPEN:https://school.computerslate.com.ng/auth], [OPEN:https://school.computerslate.com.ng], [OPEN:https://training.computerslate.com.ng/].
+Never invent pricing, guarantees, customer counts, partnerships or capabilities. If unsure, direct the visitor to admin@computerslate.com.ng. Keep replies short, professional and practical.`;
+const SUGGESTIONS=["Welcome to ComputerSlate. I can help you find School, Business, Office or Training tools.","Need the school portal? I can take you to login or new-school registration.","Looking for staff training? I can open the ComputerSlate Training portal.","Tell me what you manage — a school, business or office — and I’ll point you to the right place."];
+const RULES=[
+{test:/\b(hello|hi|hey|good morning|good afternoon|good evening)\b/i,reply:"Hello. I’m the ComputerSlate Assistant. I can help with School, Business, Office, Training, support and account access. What would you like to do?"},
+{test:/\b(login|sign in|signin|school portal|existing school)\b/i,reply:"For an existing school account, use the secure school login. [OPEN:https://school.computerslate.com.ng/auth]"},
+{test:/\b(register|registration|new school|create school|sign up|signup|onboard school)\b/i,reply:"To register a new school, open the ComputerSlate School registration site. [OPEN:https://school.computerslate.com.ng]"},
+{test:/\b(training|academy|course|learn|computer training)\b/i,reply:"ComputerSlate Training provides practical learning for school teams, business operators and digital skills. [NAV:training] You can also open the portal: [OPEN:https://training.computerslate.com.ng/]"},
+{test:/\b(school|student|result|attendance|fees|teacher|bursar)\b/i,reply:"ComputerSlate School brings core school operations into one workspace. [NAV:school] Existing users can sign in here: [OPEN:https://school.computerslate.com.ng/auth]"},
+{test:/\b(business|shop|store|pos|inventory|stock|sales)\b/i,reply:"ComputerSlate Business is designed around stock, sales and everyday operating workflows. [NAV:business] For a tailored setup, email admin@computerslate.com.ng."},
+{test:/\b(office|hr|employee|staff|asset|invoice|workflow)\b/i,reply:"ComputerSlate Office focuses on people, assets, invoicing and routine workflows. [NAV:office] For a tailored setup, email admin@computerslate.com.ng."},
+{test:/\b(price|pricing|cost|plan|subscription|how much)\b/i,reply:"Current plan information is shown on this website. For a formal quote or organisation-specific pricing, contact admin@computerslate.com.ng."},
+{test:/\b(contact|support|help|email|human|sales|demo)\b/i,reply:"You can reach ComputerSlate at admin@computerslate.com.ng. Tell the team whether you need School, Business, Office or Training support."},
+{test:/\b(privacy|terms|legal|data|acceptable use)\b/i,reply:"You can review Privacy, Terms, Service Terms and Acceptable Use from the website footer. For a legal or data request, contact admin@computerslate.com.ng."},
+{test:/\b(partner|integration|cloudflare|google|appwrite|telegram)\b/i,reply:"ComputerSlate uses and integrates with established technology services where appropriate. Third-party brand names remain the property of their respective owners."}
 ];
-
-let history = [];
-let suggestionIdx = 0;
-let firstOpen = true;
-let sugTimer;
-
-const panel = document.getElementById('cs-agent-panel');
-const messages = document.getElementById('cs-agent-messages');
-const input = document.getElementById('cs-agent-input');
-
-function appendMsg(text, role) {
-  const el = document.createElement('div');
-  el.className = `cs-msg ${role}`;
-  // Parse navigation commands
-  text = text.replace(/\[NAV:([\w]+)\]/g, (_, route) => {
-    return `<a onclick="CSAgent.navigate('${route}');return false;"># Go to ${route.charAt(0).toUpperCase()+route.slice(1)}</a>`;
-  }).replace(/\[OPEN:(https?:\/\/[^\]]+)\]/g, (_, url) => {
-    return `<a href="${url}" onclick="window.location.href='${url}';return false;">↗ ${url.replace(/https?:\/\//, '')}</a>`;
-  });
-  el.innerHTML = text;
-  messages.appendChild(el);
-  messages.scrollTop = messages.scrollHeight;
-  return el;
-}
-
-function appendTyping() {
-  const el = document.createElement('div');
-  el.className = 'cs-msg bot typing';
-  el.textContent = '…';
-  messages.appendChild(el);
-  messages.scrollTop = messages.scrollHeight;
-  return el;
-}
-
-const AI_PROXY_URL = 'https://ai-proxy.byteforge11-516.workers.dev/';
-const PROXY_TOKEN = 'SlateAppSecret2026'; // This MUST match the PROXY_SECRET you added in Cloudflare
-
-// 1. Check if the AI is active and securely connected
-async function checkAIStatus() {
-  const badge = document.getElementById('cs-agent-badge');
-  if (badge) badge.style.background = '#64708C'; // Starts Grey (checking connection)
-
-  try {
-    const res = await fetch(AI_PROXY_URL, {
-      method: 'GET',
-      headers: { 'X-Slate-Token': PROXY_TOKEN }
-    });
-    const data = await res.json();
-    
-    if (data.status === 'active') {
-       console.log("AI is securely connected and ready!");
-       if (badge) badge.style.background = '#16A34A'; // Turns Green (Active!)
-    } else {
-       if (badge) badge.style.background = '#DC2626'; // Turns Red (API Key Missing)
-    }
-  } catch (e) {
-    console.error("AI proxy is offline or rejecting access.");
-    if (badge) badge.style.background = '#DC2626'; // Turns Red (Offline/Blocked)
-  }
-}
-
-// Run the security/status check as soon as the page loads
-checkAIStatus();
-
-// 2. The secured Chat function
-async function callClaude(userMsg) {
-  history.push({ role: 'user', content: userMsg });
-  const typing = appendTyping();
-  try {
-    const res = await fetch(AI_PROXY_URL, {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'X-Slate-Token': PROXY_TOKEN // Sending the security password
-      },
-      body: JSON.stringify({
-        system: SYSTEM_PROMPT,
-        messages: history
-      })
-    });
-    
-    const data = await res.json();
-    
-    // Catch errors from the proxy (like wrong token)
-    if (!res.ok) throw new Error(data.error || 'Connection failed');
-    
-    const reply = data.reply || "Sorry, I couldn't get a response. Please try again.";
-    history.push({ role: 'assistant', content: reply });
-    typing.remove();
-    appendMsg(reply, 'bot');
-  } catch(e) {
-    typing.remove();
-    appendMsg("Error: " + e.message, 'bot');
-    console.error("Groq Error Details:", e);
-  }
-}
-
-window.CSAgent = {
-  open() {
-    panel.classList.add('open');
-    clearTimeout(sugTimer);
-    if (firstOpen) {
-      firstOpen = false;
-      appendMsg(SUGGESTIONS[suggestionIdx % SUGGESTIONS.length], 'bot');
-    }
-    setTimeout(() => input.focus(), 200);
-  },
-  close() {
-    panel.classList.remove('open');
-    // Schedule next suggestion in 15s
-    clearTimeout(sugTimer);
-    sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
-  },
-  suggest() {
-    if (panel.classList.contains('open')) { sugTimer = setTimeout(() => CSAgent.suggest(), 15000); return; }
-    suggestionIdx++;
-    // Show badge
-    document.getElementById('cs-agent-badge').style.animation = 'none';
-    document.getElementById('cs-agent-badge').offsetHeight;
-    // Pulse bubble
-    const bubble = document.getElementById('cs-agent-bubble');
-    bubble.style.boxShadow = '0 0 0 0 rgba(42,92,224,.6)';
-    bubble.animate([
-      {boxShadow:'0 4px 20px rgba(42,92,224,.45)'},
-      {boxShadow:'0 0 0 12px rgba(42,92,224,0)'}
-    ], {duration:600, iterations:2});
-    // Pre-append suggestion so user sees it on open
-    if (!panel.classList.contains('open')) {
-      firstOpen = false;
-      // Clear old messages and add fresh suggestion
-      messages.innerHTML = '';
-      history = [];
-      appendMsg(SUGGESTIONS[suggestionIdx % SUGGESTIONS.length], 'bot');
-    }
-    sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
-  },
-  send() {
-    const text = input.value.trim();
-    if (!text) return;
-    appendMsg(text, 'user');
-    input.value = '';
-    callClaude(text);
-  },
-  navigate(route) {
-    if (window.App && App.Router) App.Router.navigate(route);
-    CSAgent.close();
-  }
-};
-
-// Auto-suggest after 15 seconds
-sugTimer = setTimeout(() => CSAgent.suggest(), 15000);
+let history=[],suggestionIdx=0,firstOpen=true,sugTimer,aiAvailable=false;
+const panel=document.getElementById('cs-agent-panel'),messages=document.getElementById('cs-agent-messages'),input=document.getElementById('cs-agent-input'),status=document.getElementById('cs-agent-status');
+function escapeText(text){return String(text||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+function appendMsg(text,role){const el=document.createElement('div');el.className=`cs-msg ${role}`;if(role==='user'){el.textContent=text}else{let safe=escapeText(text).replace(/\[NAV:([\w]+)\]/g,(_,r)=>`<a href="#${r}" onclick="CSAgent.navigate('${r}');return false;">Go to ${r.charAt(0).toUpperCase()+r.slice(1)}</a>`).replace(/\[OPEN:(https?:\/\/[^\]]+)\]/g,(_,u)=>`<a href="${u}" target="_blank" rel="noopener">Open ${u.replace(/https?:\/\//,'').replace(/\/$/,'')}</a>`).replace(/admin@computerslate\.com\.ng/g,'<a href="mailto:admin@computerslate.com.ng">admin@computerslate.com.ng</a>');el.innerHTML=safe}messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el}
+function typing(){const el=document.createElement('div');el.className='cs-msg bot typing';el.textContent='Thinking…';messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el}
+function ruleReply(msg){const m=RULES.find(r=>r.test.test(msg));return m?m.reply:"I can help with School, Business, Office, Training, account access or support. Try asking “school login”, “register a school”, “business tools”, “office tools” or “training”."}
+const AI_PROXY_URL='https://ai-proxy.byteforge11-516.workers.dev/',PROXY_TOKEN='SlateAppSecret2026';
+async function checkAIStatus(){const badge=document.getElementById('cs-agent-badge');if(badge)badge.style.background='#64708C';try{const r=await fetch(AI_PROXY_URL,{method:'GET',headers:{'X-Slate-Token':PROXY_TOKEN}});const d=await r.json();aiAvailable=Boolean(r.ok&&d.status==='active')}catch(_){aiAvailable=false}if(badge)badge.style.background='#16A34A';if(status)status.textContent=aiAvailable?'ComputerSlate Assistant • AI connected':'ComputerSlate Assistant • Ready'}
+async function ask(msg){history.push({role:'user',content:msg});if(!aiAvailable){const reply=ruleReply(msg);history.push({role:'assistant',content:reply});appendMsg(reply,'bot');return}const t=typing();try{const r=await fetch(AI_PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json','X-Slate-Token':PROXY_TOKEN},body:JSON.stringify({system:SYSTEM_PROMPT,messages:history.slice(-10)})});const d=await r.json();if(!r.ok||!d.reply)throw new Error('AI unavailable');history.push({role:'assistant',content:d.reply});t.remove();appendMsg(d.reply,'bot')}catch(_){aiAvailable=false;if(status)status.textContent='ComputerSlate Assistant • Ready';t.remove();const reply=ruleReply(msg);history.push({role:'assistant',content:reply});appendMsg(reply,'bot')}}
+window.CSAgent={open(){panel.classList.add('open');clearTimeout(sugTimer);if(firstOpen){firstOpen=false;appendMsg(SUGGESTIONS[suggestionIdx],'bot')}setTimeout(()=>input.focus(),150)},close(){panel.classList.remove('open');clearTimeout(sugTimer);sugTimer=setTimeout(()=>CSAgent.suggest(),30000)},suggest(){if(panel.classList.contains('open'))return;suggestionIdx=(suggestionIdx+1)%SUGGESTIONS.length;messages.innerHTML='';history=[];firstOpen=false;appendMsg(SUGGESTIONS[suggestionIdx],'bot')},send(){const text=input.value.trim();if(!text)return;appendMsg(text,'user');input.value='';ask(text)},navigate(route){if(window.App&&App.Router)App.Router.navigate(route);CSAgent.close()}};
+checkAIStatus();sugTimer=setTimeout(()=>CSAgent.suggest(),30000);
 })();
 </script>
 
+
+
+<script>
+(function(){
+  document.querySelectorAll('[data-carousel]').forEach(function(carousel){
+    var track=carousel.querySelector('.product-carousel-track'), slides=Array.from(track.children), dots=carousel.querySelector('.carousel-dots'), index=0, timer;
+    slides.forEach(function(_,i){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show image '+(i+1));b.addEventListener('click',function(){go(i,true)});dots.appendChild(b)});
+    function go(n,manual){index=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(index*100)+'%)';Array.from(dots.children).forEach(function(b,i){b.classList.toggle('active',i===index)});if(manual)restart()}
+    function restart(){clearInterval(timer);timer=setInterval(function(){go(index+1,false)},4500)}
+    carousel.querySelector('.prev').addEventListener('click',function(){go(index-1,true)});carousel.querySelector('.next').addEventListener('click',function(){go(index+1,true)});
+    carousel.addEventListener('mouseenter',function(){clearInterval(timer)});carousel.addEventListener('mouseleave',restart);go(0,false);restart();
+  });
+})();
+</script>
 </body>
 </html>
