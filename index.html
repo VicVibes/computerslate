@@ -727,8 +727,7 @@ header,.navbar,.nav-shell{backdrop-filter:blur(18px);-webkit-backdrop-filter:blu
         <div class="stars">★★★★★</div>
         <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"Replaced 3 different apps we were using. Parents get Telegram updates instantly when fees are paid. The best investment we made this year."</p>
         <div class="flex items-center gap-2">
-          <img src="images/customer1.jpg" alt="Mrs. Oluwaseun" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:none; place-items:center; font-weight:700;">OA</div>
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:grid; place-items:center; font-weight:700;">OA</div>
           <div><div style="font-weight:600; font-size:14px;">Mrs. Oluwaseun A.</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">School Principal, Lagos</div></div>
         </div>
       </div>
@@ -736,8 +735,7 @@ header,.navbar,.nav-shell{backdrop-filter:blur(18px);-webkit-backdrop-filter:blu
         <div class="stars">★★★★★</div>
         <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"The Telegram stock bot is a lifesaver. I can check live inventory for both of my shops straight from my phone. Incredible value."</p>
         <div class="flex items-center gap-2">
-          <img src="images/customer2.jpg" alt="Chidi Eze" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:none; place-items:center; font-weight:700;">CE</div>
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:grid; place-items:center; font-weight:700;">CE</div>
           <div><div style="font-weight:600; font-size:14px;">Chidi Eze</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">Retail Owner, Abuja</div></div>
         </div>
       </div>
@@ -745,8 +743,7 @@ header,.navbar,.nav-shell{backdrop-filter:blur(18px);-webkit-backdrop-filter:blu
         <div class="stars">★★★★★</div>
         <p class="text-muted" style="font-style: italic; margin-bottom: var(--space-3);">"Gridzo inside our spreadsheets removed our admin bottleneck. Non-technical staff now handle data tasks that used to need a developer."</p>
         <div class="flex items-center gap-2">
-          <img src="images/customer3.jpg" alt="Tunde Ibrahim" style="width:40px; height:40px; border-radius:50%; object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:none; place-items:center; font-weight:700;">TI</div>
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--c-gold); color:#fff; display:grid; place-items:center; font-weight:700;">TI</div>
           <div><div style="font-weight:600; font-size:14px;">Tunde Ibrahim</div><div style="font-size:12px; color: rgb(var(--rgb-muted));">Operations Manager, PH</div></div>
         </div>
       </div>
@@ -1343,14 +1340,6 @@ document.addEventListener('keydown', event => { if (event.key === 'Escape') App.
 
 <script>
 (function(){
-const SYSTEM_PROMPT = `You are Slate Assistant, the concise customer assistant for ComputerSlate, a Nigerian operations software company serving schools, businesses, offices and training teams.
-Verified destinations:
-- Login to an existing school: https://school.computerslate.com.ng/auth
-- Register a new school: https://school.computerslate.com.ng
-- Training portal: https://training.computerslate.com.ng/
-- Support: admin@computerslate.com.ng
-Navigation commands: [NAV:home], [NAV:school], [NAV:business], [NAV:office], [NAV:training]. External commands: [OPEN:https://school.computerslate.com.ng/auth], [OPEN:https://school.computerslate.com.ng], [OPEN:https://training.computerslate.com.ng/].
-Never invent pricing, guarantees, customer counts, partnerships or capabilities. If unsure, direct the visitor to admin@computerslate.com.ng. Keep replies short, professional and practical.`;
 const SUGGESTIONS=["Welcome to ComputerSlate. I can help you find School, Business, Office or Training tools.","Need the school portal? I can take you to login or new-school registration.","Looking for staff training? I can open the ComputerSlate Training portal.","Tell me what you manage — a school, business or office — and I’ll point you to the right place."];
 const RULES=[
 {test:/\b(hello|hi|hey|good morning|good afternoon|good evening)\b/i,reply:"Hello. I’m the ComputerSlate Assistant. I can help with School, Business, Office, Training, support and account access. What would you like to do?"},
@@ -1365,17 +1354,16 @@ const RULES=[
 {test:/\b(privacy|terms|legal|data|acceptable use)\b/i,reply:"You can review Privacy, Terms, Service Terms and Acceptable Use from the website footer. For a legal or data request, contact admin@computerslate.com.ng."},
 {test:/\b(partner|integration|cloudflare|google|supabase|telegram)\b/i,reply:"ComputerSlate uses and integrates with established technology services where appropriate. Third-party brand names remain the property of their respective owners."}
 ];
-let history=[],suggestionIdx=0,firstOpen=true,sugTimer,inactivityTimer,aiAvailable=false;
+let history=[],suggestionIdx=0,firstOpen=true,sugTimer,inactivityTimer;
 const panel=document.getElementById('cs-agent-panel'),messages=document.getElementById('cs-agent-messages'),input=document.getElementById('cs-agent-input'),status=document.getElementById('cs-agent-status');
 function escapeText(text){return String(text||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
 function appendMsg(text,role,allowMarkup=false){const el=document.createElement('div');el.className=`cs-msg ${role}`;if(role==='user'){el.textContent=text}else{let safe=(allowMarkup?String(text||''):escapeText(text)).replace(/\[NAV:([\w]+)\]/g,(_,r)=>`<button type="button" class="cs-inline-action" data-nav="${r}">Go to ${r.charAt(0).toUpperCase()+r.slice(1)}</button>`).replace(/\[OPEN:(https?:\/\/[^\]]+)\]/g,(_,u)=>`<a href="${u}" target="_blank" rel="noopener noreferrer">Open ${u.replace(/https?:\/\//,'').replace(/\/$/,'')}</a>`).replace(/admin@computerslate\.com\.ng/g,'<a href="mailto:admin@computerslate.com.ng">admin@computerslate.com.ng</a>');el.innerHTML=safe}messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el}
+function ruleReply(msg){for(let r of RULES)if(r.test.test(msg))return r.reply;return 'I can help with School, Business, Office, Training or account access. What would you like to know?'}
 function relatedSuggestion(msg){let html;if(/school|student|teacher|result|fee/i.test(msg))html='Suggestion: explore School tools <span class="cs-suggestion"><button type="button" data-nav="school">Explore School</button><a href="https://school.computerslate.com.ng/auth" target="_blank" rel="noopener noreferrer">School login</a></span>';else if(/business|sales|stock|shop|inventory/i.test(msg))html='Suggestion: explore Business tools <span class="cs-suggestion"><button type="button" data-nav="business">Explore Business</button></span>';else if(/office|staff|hr|invoice|asset/i.test(msg))html='Suggestion: explore Office tools <span class="cs-suggestion"><button type="button" data-nav="office">Explore Office</button></span>';else if(/train|learn|course|skill/i.test(msg))html='Suggestion: continue learning <span class="cs-suggestion"><a href="https://training.computerslate.com.ng/" target="_blank" rel="noopener noreferrer">Open Training</a></span>';else html='Suggestion: choose a product <span class="cs-suggestion"><button type="button" data-nav="school">School</button><button type="button" data-nav="business">Business</button><button type="button" data-nav="office">Office</button></span>';return html}
 messages.addEventListener('click',function(e){const action=e.target.closest('[data-nav]');if(action){e.preventDefault();CSAgent.navigate(action.dataset.nav)}});
-const AI_PROXY_URL='https://ai-proxy.byteforge11-516.workers.dev/',PROXY_TOKEN='SlateAppSecret2026';
-async function checkAIStatus(){const badge=document.getElementById('cs-agent-badge');if(badge)badge.style.background='#64708C';try{const r=await fetch(AI_PROXY_URL,{method:'GET',headers:{'X-Slate-Token':PROXY_TOKEN}});const d=await r.json();aiAvailable=Boolean(r.ok&&d.status==='active')}catch(_){aiAvailable=false}if(badge)badge.style.background='#16A34A';if(status)status.textContent=aiAvailable?'ComputerSlate Assistant • AI connected':'ComputerSlate Assistant • Ready'}
-async function ask(msg){history.push({role:'user',content:msg});if(!aiAvailable){const reply=ruleReply(msg);history.push({role:'assistant',content:reply});appendMsg(reply,'bot');appendMsg(relatedSuggestion(msg),'bot',true);return}const t=typing();try{const r=await fetch(AI_PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json','X-Slate-Token':PROXY_TOKEN},body:JSON.stringify({system:SYSTEM_PROMPT,messages:history.slice(-10)})});const d=await r.json();if(!r.ok||!d.reply)throw new Error('AI unavailable');history.push({role:'assistant',content:d.reply});t.remove();appendMsg(d.reply,'bot');appendMsg(relatedSuggestion(msg),'bot',true)}catch(_){aiAvailable=false;if(status)status.textContent='ComputerSlate Assistant • Ready';t.remove();const reply=ruleReply(msg);history.push({role:'assistant',content:reply});appendMsg(reply,'bot');appendMsg(relatedSuggestion(msg),'bot')}}
-window.CSAgent={open(){panel.classList.add('open');clearTimeout(sugTimer);if(firstOpen){firstOpen=false;appendMsg(SUGGESTIONS[suggestionIdx],'bot')}setTimeout(()=>input.focus(),150)},close(){panel.classList.remove('open');clearTimeout(sugTimer);clearTimeout(inactivityTimer);sugTimer=setTimeout(()=>CSAgent.suggest(),30000)},suggest(){if(panel.classList.contains('open')||document.querySelector('.cs-idle-suggestion'))return;const el=appendMsg('Need a hand? Here is one useful next step:','bot');el.classList.add('cs-idle-suggestion');el.insertAdjacentHTML('beforeend',relatedSuggestion(history.length?history[history.length-1].content:''));},send(){const text=input.value.trim();if(!text)return;appendMsg(text,'user');input.value='';clearTimeout(inactivityTimer);ask(text);inactivityTimer=setTimeout(()=>{if(!panel.classList.contains('open'))CSAgent.suggest();else appendMsg('Suggestion: Would you like help choosing a ComputerSlate product or opening a portal?','bot')},30000)},navigate(route){if(window.App&&App.Router)App.Router.navigate(route);CSAgent.close()}};
-checkAIStatus();sugTimer=setTimeout(()=>CSAgent.suggest(),30000);
+async function ask(msg){history.push({role:'user',content:msg});appendMsg(msg,'user');input.value='';const reply=ruleReply(msg);history.push({role:'assistant',content:reply});appendMsg(reply,'bot');appendMsg(relatedSuggestion(msg),'bot',true);clearTimeout(inactivityTimer);inactivityTimer=setTimeout(()=>{if(!panel.classList.contains('open'))CSAgent.suggest();else appendMsg('Suggestion: Would you like help choosing a ComputerSlate product or opening a portal?','bot')},30000)}
+window.CSAgent={open(){panel.classList.add('open');clearTimeout(sugTimer);if(firstOpen){firstOpen=false;appendMsg(SUGGESTIONS[suggestionIdx],'bot')}setTimeout(()=>input.focus(),150)},close(){panel.classList.remove('open');clearTimeout(sugTimer);clearTimeout(inactivityTimer);sugTimer=setTimeout(()=>CSAgent.suggest(),30000)},suggest(){if(panel.classList.contains('open')||document.querySelector('.cs-idle-suggestion'))return;const el=appendMsg('Need a hand? Here is one useful next step:','bot');el.classList.add('cs-idle-suggestion');el.insertAdjacentHTML('beforeend',relatedSuggestion(history.length?history[history.length-1].content:''));},send(){const text=input.value.trim();if(!text)return;ask(text)},navigate(route){if(window.App&&App.Router)App.Router.navigate(route);CSAgent.close()}};
+if(status)status.textContent='ComputerSlate Assistant • Ready';sugTimer=setTimeout(()=>CSAgent.suggest(),30000);
 })();
 </script>
 
