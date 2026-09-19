@@ -1,0 +1,141 @@
+{
+  "links": {
+    "training": "https://training.computerslate.com.ng/",
+    "contact_email": "mailto:admin@computerslate.com.ng",
+    "gridzo": "https://script.google.com/macros/s/AKfycbwRN4S92Eh9tJUuy0b1zw4ICE8Myjaqm_jTvF2LauRlvP21gJMFl9Yh8Zh1Ke4nrSiqLg/exec",
+    "creator": "profile.html",
+    "school_login": "https://school.computerslate.com.ng/auth",
+    "school_register": "https://school.computerslate.com.ng",
+    "school_starter": "https://school.computerslate.com.ng",
+    "school_pro": "https://school.computerslate.com.ng",
+    "school_enterprise": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20School%20Enterprise",
+    "business_starter": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Starter",
+    "business_pro": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Pro",
+    "business_enterprise": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Business%20Enterprise",
+    "office_starter": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Starter",
+    "office_pro": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Pro",
+    "office_enterprise": "mailto:admin@computerslate.com.ng?subject=ComputerSlate%20Office%20Enterprise"
+  },
+  "pricing": {
+    "school": [
+      {
+        "name": "Starter",
+        "price": "₦0",
+        "note": "Starter access",
+        "features": [
+          "Digital registration",
+          "Fee tracking",
+          "Attendance workflow",
+          "Email support"
+        ],
+        "action": "Register School",
+        "link": "school_starter"
+      },
+      {
+        "name": "School Pro",
+        "price": "Contact us",
+        "note": "For growing schools",
+        "features": [
+          "Expanded school workflows",
+          "Reporting tools",
+          "Operational support",
+          "Onboarding guidance"
+        ],
+        "action": "Ask about School Pro",
+        "link": "school_pro"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "note": "For multi-campus schools",
+        "features": [
+          "Multi-campus planning",
+          "Custom setup",
+          "Dedicated onboarding"
+        ],
+        "action": "Contact Sales",
+        "link": "school_enterprise"
+      }
+    ],
+    "business": [
+      {
+        "name": "Starter",
+        "price": "Contact us",
+        "note": "For small operators",
+        "features": [
+          "Inventory basics",
+          "Sales records",
+          "Daily reporting",
+          "Email support"
+        ],
+        "action": "Request access",
+        "link": "business_starter"
+      },
+      {
+        "name": "Business Pro",
+        "price": "Contact us",
+        "note": "For active operations",
+        "features": [
+          "POS and inventory",
+          "Operational reporting",
+          "Workflow guidance",
+          "Priority support"
+        ],
+        "action": "Ask about Business Pro",
+        "link": "business_pro"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "note": "For multiple locations",
+        "features": [
+          "Multi-location planning",
+          "Custom integrations",
+          "Dedicated onboarding"
+        ],
+        "action": "Contact Sales",
+        "link": "business_enterprise"
+      }
+    ],
+    "office": [
+      {
+        "name": "Starter",
+        "price": "Contact us",
+        "note": "For small teams",
+        "features": [
+          "Team directory",
+          "Task tracking",
+          "Basic reports",
+          "Email support"
+        ],
+        "action": "Request access",
+        "link": "office_starter"
+      },
+      {
+        "name": "Office Pro",
+        "price": "Contact us",
+        "note": "For growing teams",
+        "features": [
+          "HR tools",
+          "Asset management",
+          "Office workflows",
+          "Priority support"
+        ],
+        "action": "Ask about Office Pro",
+        "link": "office_pro"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "note": "For larger organizations",
+        "features": [
+          "Advanced permissions",
+          "Custom workflows",
+          "Dedicated onboarding"
+        ],
+        "action": "Contact Sales",
+        "link": "office_enterprise"
+      }
+    ]
+  }
+}
