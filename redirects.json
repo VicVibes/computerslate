@@ -136,6 +136,7 @@
         "action": "Contact Sales",
         "link": "office_enterprise"
       }
+<<<<<<< HEAD
     ],
     "training": [
       {
@@ -162,6 +163,8 @@
         "action": "Contact Sales",
         "link": "contact_email"
       }
+=======
+>>>>>>> 44f0dce1d311c2ff541aa73cb7743126e262d549
     ]
   }
 }
